@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bitstamp.net/api/v2/open_orders/btcusd/
+    body:
+      encoding: US-ASCII
+      string: key=3nJKF5X1wm0kb9xxoicWt9wCegji1DiC&nonce=1487005355&signature=4DDF312A75CF08EBEE498504690F073BD606EAE4EE74AD9BC463F64FA68109A6
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www.bitstamp.net
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - x-requested-with, Content-Type, origin, accept, cache-control
+      Access-Control-Allow-Methods:
+      - POST, GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=0
+      Content-Language:
+      - en
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Feb 2017 17:02:36 GMT
+      Expires:
+      - Mon, 13 Feb 2017 17:02:36 GMT
+      Last-Modified:
+      - Mon, 13 Feb 2017 17:02:36 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Language
+      X-Frame-Options:
+      - SAMEORIGIN
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - incap_ses_184_99025=wUY8ZxNYil7rChMIJ7ONAqvmoVgAAAAATJ4yS/nov2XAqoqFpdeoLg==;
+        path=/; Domain=.bitstamp.net
+      - nlbi_99025=5FSWKp3ESXSuon9v8F1n9AAAAADLpsxjrG6B+FtgcjMIfZ8e; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=7EJIEvAHQUGUY319aMmQhKvmoVgAAAAAQUIPAAAAAAA71yZoHaKlkbrOnzDwou8B;
+        expires=Tue, 13 Feb 2018 09:09:18 GMT; path=/; Domain=.bitstamp.net
+      X-Iinfo:
+      - 3-3740334-3694821 PNNN RT(1487005355906 47) q(0 0 0 -1) r(0 0) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"price": "1025.00", "amount": "0.02000000", "type": "1", "id": "185891916",
+        "datetime": "2017-02-13 16:50:05"}, {"price": "950.00", "amount": "0.02000000",
+        "type": "0", "id": "185891873", "datetime": "2017-02-13 16:49:44"}]'
+    http_version: 
+  recorded_at: Mon, 13 Feb 2017 17:02:36 GMT
+recorded_with: VCR 3.0.3

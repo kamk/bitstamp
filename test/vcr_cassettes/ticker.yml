@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.bitstamp.net/api/v2/ticker/btcusd/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www.bitstamp.net
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"67716-b3-548665cec1994"'
+      Last-Modified:
+      - Mon, 13 Feb 2017 09:49:26 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '138'
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 13 Feb 2017 09:49:29 GMT
+      Set-Cookie:
+      - incap_ses_184_99025=hPcgWyu1njjY+GEHJ7ONAimBoVgAAAAAsZA19t3Z1ag4UUOB4KBUCA==;
+        path=/; Domain=.bitstamp.net
+      - visid_incap_99025=0QOFF1kARPiS/ZExSMlQwg6AoVgAAAAAQUIPAAAAAACpsv/7y4XXnNOFLpeHDqpQ;
+        expires=Tue, 13 Feb 2018 09:09:17 GMT; path=/; Domain=.bitstamp.net
+      X-Iinfo:
+      - 9-541749-0 0CNN RT(1486979368960 59) q(0 -1 -1 0) r(0 -1)
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: ASCII-8BIT
+      string: '{"high": "1010.99", "last": "992.16", "timestamp": "1486979366", "bid":
+        "990.11", "vwap": "996.20", "volume": "3551.86141636", "low": "975.10", "ask":
+        "992.16", "open": "1000.73"}'
+    http_version: 
+  recorded_at: Mon, 13 Feb 2017 09:49:29 GMT
+recorded_with: VCR 3.0.3

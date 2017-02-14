@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bitstamp.net/api/bitcoin_deposit_address/
+    body:
+      encoding: US-ASCII
+      string: key=3nJKF5X1wm0kb9xxoicWt9wCegji1DiC&nonce=1487094082&signature=CFC130600DA892883E97B4BE2A4838511A0D8FA597530D35B6E73371EE4CC4DC
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www.bitstamp.net
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - x-requested-with, Content-Type, origin, accept, cache-control
+      Access-Control-Allow-Methods:
+      - POST, GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=0
+      Content-Language:
+      - en
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Feb 2017 17:41:23 GMT
+      Expires:
+      - Tue, 14 Feb 2017 17:41:23 GMT
+      Last-Modified:
+      - Tue, 14 Feb 2017 17:41:23 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Language
+      X-Frame-Options:
+      - SAMEORIGIN
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - incap_ses_408_99025=jFecD9ZxmlR1ErtUW4KpBThBo1gAAAAAHgD44leuJpJ5wq6eqGqw1g==;
+        path=/; Domain=.bitstamp.net
+      - nlbi_99025=3e6CVot7b0bll+uf8F1n9AAAAADzw1dxh363BTBz090lyxZt; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=W7uDI4SbTGy34FTcLkjZGzhBo1gAAAAAQUIPAAAAAABGiPjfWvMaB/SSo1mP2zQH;
+        expires=Wed, 14 Feb 2018 14:22:39 GMT; path=/; Domain=.bitstamp.net
+      X-Iinfo:
+      - 6-11482317-11477736 PNNN RT(1487094072053 41) q(0 0 0 -1) r(1 1) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: ASCII-8BIT
+      string: '"33evLwJfPoTi45KtiHtrcPiSgHu4dGTgxj"'
+    http_version: 
+  recorded_at: Tue, 14 Feb 2017 17:41:23 GMT
+recorded_with: VCR 3.0.3
