@@ -41,6 +41,17 @@ class PrivateApiTest < Minitest::Test
       assert_equal to_bigd(0.02), buy_order.amount
     end
   end
+  
+  
+  def test_find_order
+    VCR.use_cassette('orders') do
+      order = @bs.orders.find(185891873)
+      assert_equal 'BUY', order.type
+      assert_equal to_bigd(950), order.price
+      assert_equal to_bigd(0.02), order.amount      
+    end
+  end
+
 
 
   def test_cancel_order
@@ -81,6 +92,15 @@ class PrivateApiTest < Minitest::Test
       assert_equal 'USD',                sell_tx.fee_currency
       assert_equal 78374919,             sell_tx.order_id
       assert_equal to_bigd(-9.02),       sell_tx.fiat_amount
+    end
+  end
+
+
+  def test_order_transactions
+    VCR.use_cassette('user_transactions') do
+      data = @bs.transactions.user(offset: 56, limit: 5, order_id: 78374919)
+      assert_equal 1,       data.length
+      assert_equal 9080754, data[0].transaction_id
     end
   end
 

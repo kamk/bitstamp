@@ -15,8 +15,12 @@ module Bitstamp
     
     # User transactions
     def user(options = {})
-      @net.post('user_transactions', options) \
-          .map{ |t| Bitstamp::Model::Transaction.new(:private, @curr_pair, t) }
+      order_id = options.delete(:order_id)
+      data = @net.post('user_transactions', options)
+      if order_id
+        data.select!{ |t| t['order_id'] == order_id }
+      end
+      data.map{ |t| Bitstamp::Model::Transaction.new(:private, @curr_pair, t) }
     end
 
 
