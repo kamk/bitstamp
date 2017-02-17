@@ -7,7 +7,7 @@ module Bitstamp
   class NetComm
 
     PRIVATE_RESOURCES = %w(balance user_transactions open_orders order_status cancel_order cancel_all_orders buy sell withdrawal_requests bitcoin_withdrawal bitcoin_deposit_address unconfirmed_btc transfer-to-main transfer-from-main)
-    V1_RESOURCES = %w(cancel_all_orders withdrawal_requests bitcoin_withdrawal bitcoin_deposit_address unconfirmed_btc)
+    V1_RESOURCES = %w(order_status cancel_all_orders withdrawal_requests bitcoin_withdrawal bitcoin_deposit_address unconfirmed_btc)
     SKIP_CURR_RESOURCES = %w(user_transactions cancel_order transfer-to-main transfer-from-main)
     PLAIN_RESPONSES = %w(bitcoin_deposit_address)
 

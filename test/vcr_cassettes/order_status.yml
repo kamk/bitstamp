@@ -1,0 +1,138 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bitstamp.net/api/v2/open_orders/btcusd/
+    body:
+      encoding: US-ASCII
+      string: key=1UiYqsdEoZrxqfDog4ReV5jwYkDtbR7q&nonce=1487317237&signature=A3A137007206E7BF3E9DE25645891BDF8BBC11F550DA40F33162E11CB06FB22A
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www.bitstamp.net
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - x-requested-with, Content-Type, origin, accept, cache-control
+      Access-Control-Allow-Methods:
+      - POST, GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=0
+      Content-Language:
+      - en
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 17 Feb 2017 07:40:38 GMT
+      Expires:
+      - Fri, 17 Feb 2017 07:40:38 GMT
+      Last-Modified:
+      - Fri, 17 Feb 2017 07:40:38 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Language
+      X-Frame-Options:
+      - SAMEORIGIN
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - incap_ses_184_99025=cuk+B9Rm92jDf7OyK7ONAvaoplgAAAAAgNgNq5/PRIGrjt1e9jheNQ==;
+        path=/; Domain=.bitstamp.net
+      - nlbi_99025=S/DNPVQfUQdXQYcY8F1n9AAAAABsHN/H2Kr192J0TDdT7KoX; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=anDtRkIISre+8dXM7w/VcPaoplgAAAAAQUIPAAAAAADhs2GebwmubXag7ChsYQFT;
+        expires=Fri, 16 Feb 2018 15:33:15 GMT; path=/; Domain=.bitstamp.net
+      X-Iinfo:
+      - 9-26640222-26612949 PNNN RT(1487317238128 37) q(0 0 0 0) r(0 0) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"price": "1100.00", "amount": "0.02380000", "type": "1", "id": "187006931",
+        "datetime": "2017-02-17 07:39:03"}]'
+    http_version: 
+  recorded_at: Fri, 17 Feb 2017 07:40:38 GMT
+- request:
+    method: post
+    uri: https://www.bitstamp.net/api/order_status/
+    body:
+      encoding: US-ASCII
+      string: id=187006931&key=1UiYqsdEoZrxqfDog4ReV5jwYkDtbR7q&nonce=1487317238&signature=8BB651515BCE97500FD0FC9E448F0406048312446596F8DBFC45195A32E3531E
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www.bitstamp.net
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - x-requested-with, Content-Type, origin, accept, cache-control
+      Access-Control-Allow-Methods:
+      - POST, GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=0
+      Content-Language:
+      - en
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 17 Feb 2017 07:40:39 GMT
+      Expires:
+      - Fri, 17 Feb 2017 07:40:39 GMT
+      Last-Modified:
+      - Fri, 17 Feb 2017 07:40:39 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Language
+      X-Frame-Options:
+      - SAMEORIGIN
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - incap_ses_184_99025=DWJQVVrrKXXDf7OyK7ONAveoplgAAAAAGvApN1yG5SlOkgoPmwdNvw==;
+        path=/; Domain=.bitstamp.net
+      - nlbi_99025=d/3nPgMWvFCZa3jL8F1n9AAAAABv2bvOSmIGKknIFKISoN7c; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=anDtRkIISre+8dXM7w/VcPaoplgAAAAAQUIPAAAAAADhs2GebwmubXag7ChsYQFT;
+        expires=Fri, 16 Feb 2018 15:33:15 GMT; path=/; Domain=.bitstamp.net
+      X-Iinfo:
+      - 9-26640452-26575342 PNNN RT(1487317239248 39) q(0 0 0 0) r(1 1) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status": "Open", "transactions": []}'
+    http_version: 
+  recorded_at: Fri, 17 Feb 2017 07:40:39 GMT
+recorded_with: VCR 3.0.3

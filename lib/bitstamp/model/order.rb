@@ -14,6 +14,12 @@ module Bitstamp::Model
       self.price = BigDecimal.new(price)
       self.amount = BigDecimal.new(amount)
     end
+
+
+    def current_status
+      r = @net.post('order_status', id: id)
+      r['status'].tr(' ', '_').downcase.to_sym
+    end
     
     
     def cancel!

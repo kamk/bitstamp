@@ -53,6 +53,14 @@ class PrivateApiTest < Minitest::Test
   end
 
 
+  def test_order_status
+    VCR.use_cassette('order_status') do
+      order = @bs.orders.find(187006931)
+      assert_equal(:open, order.current_status)
+    end
+  end
+
+
 
   def test_cancel_order
     VCR.use_cassette('cancel_order') do
