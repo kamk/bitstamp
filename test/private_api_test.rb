@@ -3,7 +3,7 @@ require 'test_helper'
 class PrivateApiTest < Minitest::Test
     
   def setup
-    @bs = Bitstamp::Client.new(CLIENT_ID, PUBKEY, PRIVKEY)
+    @bs = Bitstamp::Client.new(CLIENT_ID, KEY, SECRET)
   end
   
 

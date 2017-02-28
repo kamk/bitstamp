@@ -14,10 +14,10 @@ module Bitstamp
     SHA256_DIGEST = OpenSSL::Digest.new('sha256')
 
     
-    def initialize(client_id, pubkey, privkey, curr_pair)
+    def initialize(client_id, key, secret, curr_pair)
       @client_id = client_id
-      @public_key = pubkey
-      @private_key = privkey
+      @key = key
+      @secret = secret
       @curr_pair = curr_pair
     end
 
@@ -34,7 +34,7 @@ module Bitstamp
 
     private
     def configured?
-      @client_id && @public_key && @private_key
+      @client_id && @key && @secret
     end
     
         
@@ -93,12 +93,12 @@ module Bitstamp
     
     def signature_params
       nonce = Time.now.to_i
-      message = sprintf("%d%d%s", nonce, @client_id, @public_key)
+      message = sprintf("%d%d%s", nonce, @client_id, @key)
       sleep 1
       {
-        key: @public_key,
+        key: @key,
         nonce: nonce,
-        signature: OpenSSL::HMAC.hexdigest(SHA256_DIGEST, @private_key, message) \
+        signature: OpenSSL::HMAC.hexdigest(SHA256_DIGEST, @secret, message) \
                                 .upcase
       }
     end

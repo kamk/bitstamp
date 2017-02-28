@@ -1,8 +1,8 @@
 module Bitstamp
   class Client
   
-    def initialize(client_id, pubkey, privkey, curr_pair = DEFAULT_CURR_PAIR)
-      @net = Bitstamp::NetComm.new(client_id, pubkey, privkey, curr_pair)
+    def initialize(client_id, key, secret, curr_pair = DEFAULT_CURR_PAIR)
+      @net = Bitstamp::NetComm.new(client_id, key, secret, curr_pair)
       @curr_pair = curr_pair[0..2], curr_pair[3..5]
     end
 
