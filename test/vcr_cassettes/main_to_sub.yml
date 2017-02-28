@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bitstamp.net/api/v2/transfer-from-main/
+    body:
+      encoding: US-ASCII
+      string: subAccount=48489189&amount=0.002&currency=BTC&key=1UiYqsdEoZrxqfDog4ReV5jwYkDtbR7q&nonce=1488289187&signature=067C21272E8E7E817FBE04DD56413A0879008A2E6875F0A951AC5253215B7D02
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www.bitstamp.net
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - x-requested-with, Content-Type, origin, accept, cache-control
+      Access-Control-Allow-Methods:
+      - POST, GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=0
+      Content-Language:
+      - en
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 28 Feb 2017 13:39:48 GMT
+      Expires:
+      - Tue, 28 Feb 2017 13:39:48 GMT
+      Last-Modified:
+      - Tue, 28 Feb 2017 13:39:48 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Language
+      X-Frame-Options:
+      - SAMEORIGIN
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - incap_ses_184_99025=WZZaP1Gd70otyQNbMLONAqN9tVgAAAAAKHtfHVSHf86Hq16whT9hdw==;
+        path=/; Domain=.bitstamp.net
+      - nlbi_99025=GwVnSY/lVFAr+VUo8F1n9AAAAABRLPzfi3wzaej3/DzLKqpF; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=S/kNh7DISdax7/GPE+jAZG19tVgAAAAAQUIPAAAAAAAZR309JBKaCqgF4rCZN4+f;
+        expires=Wed, 28 Feb 2018 09:31:08 GMT; path=/; Domain=.bitstamp.net
+      X-Iinfo:
+      - 7-18950238-18939673 PNNN RT(1488289187758 37) q(0 0 0 0) r(1 1) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status": "ok", "result": true}'
+    http_version: 
+  recorded_at: Tue, 28 Feb 2017 13:39:48 GMT
+recorded_with: VCR 3.0.3

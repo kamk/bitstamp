@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bitstamp.net/api/v2/transfer-to-main/
+    body:
+      encoding: US-ASCII
+      string: amount=0.002&currency=BTC&key=wf4qqkFlD5ARJBlp89eolHMD6JrU7bU0&nonce=1488290310&signature=B2DEAB30D392EEE37B79B97F0D162A8458B8E447C6A8A489ADE601C4690E1622
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www.bitstamp.net
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - x-requested-with, Content-Type, origin, accept, cache-control
+      Access-Control-Allow-Methods:
+      - POST, GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=0
+      Content-Language:
+      - en
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 28 Feb 2017 13:58:31 GMT
+      Expires:
+      - Tue, 28 Feb 2017 13:58:31 GMT
+      Last-Modified:
+      - Tue, 28 Feb 2017 13:58:31 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Accept-Language
+      X-Frame-Options:
+      - SAMEORIGIN
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - incap_ses_184_99025=lVfsb5lUAng1iBJbMLONAgeCtVgAAAAAGup/Q4tsXBAZ4XWpzyVDfA==;
+        path=/; Domain=.bitstamp.net
+      - nlbi_99025=l3MWPtUJ73giwIP+8F1n9AAAAAASSplN96tKaX3j8qAJLpBq; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=2uo3bRl7SAiBU20g5UBHYQeCtVgAAAAAQUIPAAAAAADddmm2kL35W/LRk18j6K0z;
+        expires=Wed, 28 Feb 2018 09:31:08 GMT; path=/; Domain=.bitstamp.net
+      X-Iinfo:
+      - 5-18789722-18761580 PNNN RT(1488290311521 41) q(0 0 0 -1) r(1 1) U6
+      X-Cdn:
+      - Incapsula
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status": "ok", "result": true}'
+    http_version: 
+  recorded_at: Tue, 28 Feb 2017 13:58:31 GMT
+recorded_with: VCR 3.0.3

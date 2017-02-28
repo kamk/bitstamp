@@ -67,6 +67,19 @@ module Bitstamp
       @net.post('unconfirmed_btc')
     end
 
+    
+    def transfer_main_to_sub(sub_account_id, amount, currency = 'BTC')
+      r = @net.post('transfer-from-main', subAccount: sub_account_id,
+                                          amount: amount,
+                                          currency: currency)
+      r['status'] == 'ok'
+    end
 
+
+    def transfer_sub_to_main(amount, currency = 'BTC')
+      r = @net.post('transfer-to-main', amount: amount,
+                                        currency: currency)
+      r['status'] == 'ok'
+    end
   end
 end

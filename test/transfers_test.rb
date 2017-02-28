@@ -33,4 +33,19 @@ class TransfersTest < Minitest::Test
   end
 
 
+  def test_trasfer_main_to_sub
+    VCR.use_cassette('main_to_sub') do
+      assert @bs.transfer_main_to_sub(SUB_ID, 0.002)
+    end
+  end
+
+
+  def test_trasfer_sub_to_main
+    VCR.use_cassette('sub_to_main') do
+      bs_sub = Bitstamp::Client.new(CLIENT_ID, SUB_KEY, SUB_SECRET)
+      assert bs_sub.transfer_sub_to_main(0.002)
+    end
+  end
+
+
 end
