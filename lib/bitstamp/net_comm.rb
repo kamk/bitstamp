@@ -99,6 +99,7 @@ module Bitstamp
       if chan > 0
         offset = CHANNEL_NONCE_OFFSET[chan - 1]
         nonce += 1 while nonce % offset > 0
+        sleep offset / 100.0
       end
       
       message = sprintf("%d%d%s", nonce, @client_id, @key)
