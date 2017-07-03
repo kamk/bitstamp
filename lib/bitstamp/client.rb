@@ -58,8 +58,9 @@ module Bitstamp
 
 
     def deposit_address
-      @net.post('bitcoin_deposit_address') \
-          .tr('"', '')
+      r = @net.post('bitcoin_deposit_address') \
+              .tr('"', '')
+      r.include?('error') ? false : r
     end
 
 
