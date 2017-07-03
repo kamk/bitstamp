@@ -12,7 +12,7 @@ module Bitstamp
     PLAIN_RESPONSES = %w(bitcoin_deposit_address)
 
     SHA256_DIGEST = OpenSSL::Digest.new('sha256')
-    CHANNEL_NONCE_OFFSET = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
+    CHANNEL_NONCE_OFFSET = [2, 5, 11, 17, 23, 31, 41, 47, 59, 67, 73, 83]
 
     cattr_writer :channel
     
@@ -98,10 +98,10 @@ module Bitstamp
       chan = @@channel.to_i
       if chan > 0
         offset = CHANNEL_NONCE_OFFSET[chan - 1]
-        nonce += 1 while nonce % offset > 0
+        mod = nonce % offset
+        nonce += (offset - mod) if mod > 0
         sleep offset / 100.0
       end
-      
       message = sprintf("%d%d%s", nonce, @client_id, @key)
       sleep 1
       {
