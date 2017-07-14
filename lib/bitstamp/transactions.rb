@@ -20,7 +20,8 @@ module Bitstamp
       if order_id
         data.select!{ |t| t['order_id'] == order_id }
       end
-      data.map{ |t| Bitstamp::Model::Transaction.new(:private, @curr_pair, t) }
+      data.map{ |t| Bitstamp::Model::Transaction.new(:private, @curr_pair, t) } \
+          .reject{ |t| t.nil? }
     end
 
 

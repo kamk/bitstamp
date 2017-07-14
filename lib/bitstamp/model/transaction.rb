@@ -35,9 +35,10 @@ module Bitstamp::Model
         attributes['transaction_type'] = PRIVATE_TYPES[tx_type]
         attributes['amount'] = attributes.delete(coin_code)
         attributes['price'] = attributes.delete(coin_code + '_' + fiat_code)
-        %w(usd eur).each{ |c| attributes.delete(c) }
+        return unless attributes['price']
+        %w(eur usd eur_usd).each{ |c| attributes.delete(c) }
         super(attributes)
-        self.amount = BigDecimal.new(amount)
+        self.amount = BigDecimal.new(amount.to_s)
         self.amount_currency = coin_code.upcase
         self.price = BigDecimal.new(price, 8)
         self.price_currency = fiat_code.upcase
