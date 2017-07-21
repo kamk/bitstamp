@@ -20,6 +20,8 @@ module Bitstamp
   SERVICE_URI = "https://www.bitstamp.net/api"
   DEFAULT_CURR_PAIR = 'btcusd'
 
+  NET_TIMEOUT = 10    # secs
+
   private
   def self.to_api_params(opts)
     r = {}
