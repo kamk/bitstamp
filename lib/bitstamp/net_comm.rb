@@ -61,9 +61,7 @@ module Bitstamp
       uri.query = params if req_klass == Net::HTTP::Get && !params.empty?
 
       begin
-        Net::HTTP.start(uri.hostname, uri.port,
-                        use_ssl: true, open_timeout: NET_TIMEOUT) do |http|
-          http.read_timeout = NET_TIMEOUT
+        Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
           req = req_klass.new(uri)
           if req_klass == Net::HTTP::Post
             req['Content-Type'] = 'application/x-www-form-urlencoded'
@@ -85,10 +83,7 @@ module Bitstamp
             end
           end
         end
-      rescue SocketError, SystemCallError => err
-        if err.is_a?(SystemCallError)
-          raise if err.class.name !~ /^Errno::/
-        end
+      rescue Net::ProtocolError, Resolv::ResolvError, Timeout::Error, SocketError, SystemCallError => err
         raise Bitstamp::Error.new("Network error: #{err}")
       end
       result
