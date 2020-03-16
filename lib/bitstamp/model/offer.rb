@@ -3,8 +3,8 @@ module Bitstamp::Model
     attr_accessor :price, :amount
     
     def initialize(data = [])
-      self.price = BigDecimal.new(data[0])
-      self.amount = BigDecimal.new(data[1])
+      self.price = BigDecimal(data[0])
+      self.amount = BigDecimal(data[1])
     end
 
     

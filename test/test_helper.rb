@@ -32,5 +32,5 @@ SUB_SECRET = "xdsH40rOhMONLe6aBEHbfbTXjN4tOaH1"
 
 # BigDecimal numbers
 def to_bigd(num)
-  BigDecimal.new(num, 12)
+  BigDecimal(num, 12)
 end

@@ -22,9 +22,9 @@ module Bitstamp::Model
         attributes['transaction_type'] = PUBLIC_TYPES[tx_type]
         super(attributes)
         self.timestamp = Time.at(timestamp.to_i)
-        self.price = BigDecimal.new(price)
+        self.price = BigDecimal(price)
         self.price_currency = fiat_code.upcase
-        self.amount = BigDecimal.new(amount)
+        self.amount = BigDecimal(amount)
         self.amount_currency = coin_code.upcase
         if DEBIT_TRANSACTION_TYPES.include?(transaction_type)
           self.amount *= -1
@@ -38,11 +38,11 @@ module Bitstamp::Model
         return unless attributes['price']
         %w(eur usd eur_usd).each{ |c| attributes.delete(c) }
         super(attributes)
-        self.amount = BigDecimal.new(amount.to_s)
+        self.amount = BigDecimal(amount.to_s)
         self.amount_currency = coin_code.upcase
-        self.price = BigDecimal.new(price, 8)
+        self.price = BigDecimal(price, 8)
         self.price_currency = fiat_code.upcase
-        self.fee = BigDecimal.new(fee)
+        self.fee = BigDecimal(fee)
         self.fee_currency = fiat_code.upcase
         if transaction_type == '_trade_'
           self.transaction_type = amount > 0 ? 'BUY' : 'SELL'

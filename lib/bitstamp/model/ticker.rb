@@ -8,7 +8,7 @@ module Bitstamp::Model
       super
       attributes.each do |a, v|
         next if a == 'timestamp'
-        public_send("#{a}=".to_sym, BigDecimal.new(v))
+        public_send("#{a}=".to_sym, BigDecimal(v))
       end
       self.timestamp = Time.at(attributes['timestamp'].to_i)
     end

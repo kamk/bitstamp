@@ -11,8 +11,8 @@ module Bitstamp::Model
       super
       self.id = id.to_i
       self.type = TYPES[type.to_i]
-      self.price = BigDecimal.new(price)
-      self.amount = BigDecimal.new(amount)
+      self.price = BigDecimal(price)
+      self.amount = BigDecimal(amount)
     end
 
 
