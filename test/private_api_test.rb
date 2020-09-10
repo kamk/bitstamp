@@ -12,14 +12,15 @@ class PrivateApiTest < Minitest::Test
       data = @bs.balances
       usd = data['USD']
       assert_equal 'USD', usd.currency
-      assert_equal to_bigd(24.93), usd.balance
-      assert_equal to_bigd(19.05), usd.reserved
-      assert_equal to_bigd(5.88), usd.available
+      assert_equal to_bigd(0.05), usd.balance
+      assert_equal to_bigd(0.0), usd.reserved
+      assert_equal to_bigd(0.05), usd.available
       btc = data['BTC']
       assert_equal 'BTC', btc.currency
-      assert_equal to_bigd(0.025), btc.balance
-      assert_equal to_bigd(0.02), btc.reserved
-      assert_equal to_bigd(0.005), btc.available
+      assert_equal to_bigd(0.0), btc.balance
+      assert_equal to_bigd(0.0), btc.reserved
+      assert_equal to_bigd(0.0), btc.available
+      assert_equal to_bigd(0.0005), data['FEE']
     end
   end
 

@@ -41,6 +41,7 @@ module Bitstamp
                             available: data["#{curr}_available"],
                             reserved: data["#{curr}_reserved"]
                          )
+        r['FEE'] = (data["fee"] / 1000).to_d
       end
       r
     end
