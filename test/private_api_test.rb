@@ -25,6 +25,13 @@ class PrivateApiTest < Minitest::Test
   end
 
 
+  def test_withdrawal_fee
+    VCR.use_cassette('withdrawal_fee') do
+      assert_equal(to_bigd(0.0005), @bs.coin_withdrawal_fee)
+    end
+  end
+
+
   def test_orders
     VCR.use_cassette('orders') do
       data = @bs.orders.all

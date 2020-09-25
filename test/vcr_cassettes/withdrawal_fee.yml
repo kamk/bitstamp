@@ -1,0 +1,112 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.bitstamp.net/api/v2/balance/
+    body:
+      encoding: US-ASCII
+      string: key=NW41G5EXr7FYuE6oeR268g6GAuUTuldr&nonce=160093986262&signature=93B94E296900BC220BB0A6868DA6E15A477BCAA1141C2E8EEFC45D578C28552D
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www.bitstamp.net
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 24 Sep 2020 09:31:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Last-Modified:
+      - Thu, 24 Sep 2020 09:31:03 GMT
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - 'default-src ''self'' ''report-sample''; base-uri ''self'' ; connect-src ''self''
+        wss://ws.bitstamp.net *.bitstamp.net *.trackjs.com *.google-analytics.com
+        stats.g.doubleclick.net *.mixpanel.com ; font-src ''self'' data: assets.bitstamp.net
+        fonts.gstatic.com fonts.gstatic.cn www.google.com ; frame-ancestors ''self'';
+        frame-src ''self'' pixel-a.basis.net 8720977.fls.doubleclick.net *.ledgerwallet.com
+        *.google.com www.recaptcha.net www.googletagmanager.com pixel.sitescout.com
+        ctpe.net ; img-src * data: blob:; object-src ''self'' blob:; report-uri /api/report-csp/;
+        script-src ''self'' ''report-sample'' ''unsafe-eval'' assets.bitstamp.net
+        js-agent.newrelic.com *.google-analytics.com d3dy5gmtp8yhk7.cloudfront.net
+        www.googleadservices.com www.googletagmanager.com www.gstatic.com www.gstatic.cn
+        www.recaptcha.net code.highcharts.com/stock/highstock.js bam.nr-data.net cdn.mxpnl.com
+        ''nonce-NDk5MzA5Mzk2OTA2NTU4NDIzNzIwNzE3NzUzNzM0NTg1OTE3NTQ=''; style-src
+        ''self'' ''unsafe-inline'' assets.bitstamp.net fonts.googleapis.com'
+      Content-Language:
+      - en
+      Expires:
+      - Thu, 24 Sep 2020 09:31:03 GMT
+      Vary:
+      - Authorization,Accept-Language,Cookie,Accept-Encoding
+      X-Bts-Request-Trace-Id:
+      - Root=1-5f6c6757-adff36631deac701efd0fa34
+      Cache-Control:
+      - max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Set-Cookie:
+      - incap_ses_534_99025=KlTFN5oYFH4yIoL+VyZpB1dnbF8AAAAA0kBe3glCQyEwJExKspdo5g==;
+        path=/; Domain=.bitstamp.net
+      - nlbi_99025=URXAGK3CD3JqY5APL9q5pgAAAACKdYTUy+dqRBWF4TwidKw8; path=/; Domain=.bitstamp.net
+      - stmpdid=zj38xDUdGXTnQCcQRK8Vj8OSpRf7T_ePC6RfY0Awe4_S2qEAvzlJbKBOXOtA1TJZ_reV5VK2L_rSfKLmcgjzKbQ;
+        expires=Thu, 23-Sep-2027 09:31:03 GMT; httponly; Max-Age=220752000; Path=/;
+        secure
+      - visid_incap_99025=ouZZBgziQuudT6cPj5XjT1dnbF8AAAAAQUIPAAAAAADLfi9WZlloybyNscoqbhmF;
+        expires=Fri, 24 Sep 2021 08:01:52 GMT; HttpOnly; path=/; Domain=.bitstamp.net
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, GET
+      Access-Control-Allow-Headers:
+      - x-requested-with, Content-Type, origin, accept, cache-control
+      X-Cdn:
+      - Incapsula
+      X-Iinfo:
+      - 5-171875464-171865330 PNNy RT(1600939863362 18) q(0 0 0 0) r(1 1) U6
+    body:
+      encoding: ASCII-8BIT
+      string: '{"bch_available": "0.00000000", "bch_balance": "0.00000000", "bch_reserved":
+        "0.00000000", "bch_withdrawal_fee": "0.00010000", "bchbtc_fee": "0.500", "bcheur_fee":
+        "0.500", "bchgbp_fee": "0.500", "bchusd_fee": "0.500", "btc_available": "0.00000000",
+        "btc_balance": "0.00000000", "btc_reserved": "0.00000000", "btc_withdrawal_fee":
+        "0.00050000", "btceur_fee": "0.500", "btcgbp_fee": "0.500", "btcpax_fee":
+        "0.500", "btcusd_fee": "0.500", "eth_available": "0.00000000", "eth_balance":
+        "0.00000000", "eth_reserved": "0.00000000", "eth_withdrawal_fee": "0.09000000",
+        "ethbtc_fee": "0.500", "etheur_fee": "0.500", "ethgbp_fee": "0.500", "ethpax_fee":
+        "0.500", "ethusd_fee": "0.500", "eur_available": "0.21", "eur_balance": "0.21",
+        "eur_reserved": "0.00", "eurusd_fee": "0.500", "gbp_available": "0.00", "gbp_balance":
+        "0.00", "gbp_reserved": "0.00", "gbpeur_fee": "0.500", "gbpusd_fee": "0.500",
+        "ltc_available": "0.00000000", "ltc_balance": "0.00000000", "ltc_reserved":
+        "0.00000000", "ltc_withdrawal_fee": "0.00100000", "ltcbtc_fee": "0.500", "ltceur_fee":
+        "0.500", "ltcgbp_fee": "0.500", "ltcusd_fee": "0.500", "pax_available": "0.00",
+        "pax_balance": "0.00", "pax_reserved": "0.00", "pax_withdrawal_fee": "0.50",
+        "paxeur_fee": "0.500", "paxgbp_fee": "0.500", "paxusd_fee": "0.500", "usd_available":
+        "0.00", "usd_balance": "0.00", "usd_reserved": "0.00", "xlm_available": "0.00000000",
+        "xlm_balance": "0.00000000", "xlm_reserved": "0.00000000", "xlm_withdrawal_fee":
+        "0.00500000", "xlmbtc_fee": "0.500", "xlmeur_fee": "0.500", "xlmgbp_fee":
+        "0.500", "xlmusd_fee": "0.500", "xrp_available": "0.00000000", "xrp_balance":
+        "0.00000000", "xrp_reserved": "0.00000000", "xrp_withdrawal_fee": "0.02000000",
+        "xrpbtc_fee": "0.500", "xrpeur_fee": "0.500", "xrpgbp_fee": "0.500", "xrppax_fee":
+        "0.500", "xrpusd_fee": "0.500"}'
+  recorded_at: Thu, 24 Sep 2020 09:31:03 GMT
+recorded_with: VCR 6.0.0

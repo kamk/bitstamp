@@ -49,7 +49,8 @@ module Bitstamp
       else
         uri_parts << 'v2'
         uri_parts << resource
-        uri_parts << @curr_pair unless SKIP_CURR_RESOURCES.include?(resource)
+        uri_parts << @curr_pair unless SKIP_CURR_RESOURCES.include?(resource) ||
+                                       params.delete(:skip_currency_pair)
       end
       uri_parts << ''   # append '/' at the end
       uri = URI(uri_parts.join('/'))

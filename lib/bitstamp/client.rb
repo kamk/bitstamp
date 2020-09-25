@@ -46,6 +46,13 @@ module Bitstamp
       r
     end
     
+    
+    # Find out coin's withdrawal fee
+    def coin_withdrawal_fee
+      data = @net.post('balance', skip_currency_pair: true)
+      data[@curr_pair[0] + '_withdrawal_fee'].to_d
+    end
+    
 
     # Access to orders
     def orders
