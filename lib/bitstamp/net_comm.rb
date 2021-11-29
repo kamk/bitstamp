@@ -1,3 +1,4 @@
+require 'resolv'
 require 'uri'
 require 'net/http'
 require 'json'
@@ -6,10 +7,8 @@ require 'openssl'
 module Bitstamp
   class NetComm
 
-    PRIVATE_RESOURCES = %w(balance user_transactions open_orders order_status cancel_order cancel_all_orders buy sell withdrawal_requests bitcoin_withdrawal bitcoin_deposit_address unconfirmed_btc transfer-to-main transfer-from-main)
-    V1_RESOURCES = %w(order_status cancel_all_orders withdrawal_requests bitcoin_withdrawal bitcoin_deposit_address unconfirmed_btc)
-    SKIP_CURR_RESOURCES = %w(user_transactions cancel_order transfer-to-main transfer-from-main)
-    PLAIN_RESPONSES = %w(bitcoin_deposit_address)
+    PRIVATE_RESOURCES = %w(balance user_transactions open_orders order_status cancel_order cancel_all_orders buy sell withdrawal_requests btc_withdrawal btc_address transfer-to-main transfer-from-main)
+    SKIP_CURR_RESOURCES = %w(user_transactions order_status cancel_order withdrawal_requests btc_withdrawal btc_address transfer-to-main transfer-from-main)
 
     SHA256_DIGEST = OpenSSL::Digest.new('sha256')
 
@@ -36,22 +35,16 @@ module Bitstamp
       @client_id && @key && @secret
     end
     
-        
+    
     def perform(req_klass, resource, params)
       result = {}
       if PRIVATE_RESOURCES.include?(resource)
         raise Bitstamp::Error.new("Missing API keys") unless configured?
         params.merge!(signature_params)
       end
-      uri_parts = [ Bitstamp::SERVICE_URI ]
-      if V1_RESOURCES.include?(resource)
-        uri_parts << resource
-      else
-        uri_parts << 'v2'
-        uri_parts << resource
-        uri_parts << @curr_pair unless SKIP_CURR_RESOURCES.include?(resource) ||
-                                       params.delete(:skip_currency_pair)
-      end
+      uri_parts = [ Bitstamp::SERVICE_URI, 'v2', resource ]
+      uri_parts << @curr_pair unless SKIP_CURR_RESOURCES.include?(resource) ||
+                                     params.delete(:skip_currency_pair)
       uri_parts << ''   # append '/' at the end
       uri = URI(uri_parts.join('/'))
       
@@ -70,7 +63,6 @@ module Bitstamp
             http.finish
             raise Bitstamp::Error.new(sprintf("%d %s", response.code, response.message))
           end
-          return response.body if PLAIN_RESPONSES.include?(resource)
           result = JSON.parse(response.body)
           if result.class == Hash            
             err = result['error'] ||

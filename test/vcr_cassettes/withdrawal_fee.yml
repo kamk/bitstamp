@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.bitstamp.net/api/v2/balance/
     body:
       encoding: US-ASCII
-      string: key=NW41G5EXr7FYuE6oeR268g6GAuUTuldr&nonce=160093986262&signature=93B94E296900BC220BB0A6868DA6E15A477BCAA1141C2E8EEFC45D578C28552D
+      string: key=ha2aWXsDEYoaH5ZRRbAAL57s2HUZsHZ3&nonce=163671288758&signature=A4D6E3C854DC5D6BA58254BE8318B9A773D161FE6A2224D95FAD13E224898661
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 24 Sep 2020 09:31:03 GMT
+      - Fri, 12 Nov 2021 10:28:08 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -31,48 +31,51 @@ http_interactions:
       Connection:
       - keep-alive
       Server:
-      - Apache
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips mod_wsgi/4.7.1 Python/2.7
       Strict-Transport-Security:
       - max-age=63072000; includeSubDomains
       Last-Modified:
-      - Thu, 24 Sep 2020 09:31:03 GMT
+      - Fri, 12 Nov 2021 10:28:08 GMT
       X-Xss-Protection:
       - 1; mode=block
       Content-Security-Policy:
       - 'default-src ''self'' ''report-sample''; base-uri ''self'' ; connect-src ''self''
         wss://ws.bitstamp.net *.bitstamp.net *.trackjs.com *.google-analytics.com
-        stats.g.doubleclick.net *.mixpanel.com ; font-src ''self'' data: assets.bitstamp.net
-        fonts.gstatic.com fonts.gstatic.cn www.google.com ; frame-ancestors ''self'';
-        frame-src ''self'' pixel-a.basis.net 8720977.fls.doubleclick.net *.ledgerwallet.com
-        *.google.com www.recaptcha.net www.googletagmanager.com pixel.sitescout.com
-        ctpe.net ; img-src * data: blob:; object-src ''self'' blob:; report-uri /api/report-csp/;
-        script-src ''self'' ''report-sample'' ''unsafe-eval'' assets.bitstamp.net
-        js-agent.newrelic.com *.google-analytics.com d3dy5gmtp8yhk7.cloudfront.net
-        www.googleadservices.com www.googletagmanager.com www.gstatic.com www.gstatic.cn
-        www.recaptcha.net code.highcharts.com/stock/highstock.js bam.nr-data.net cdn.mxpnl.com
-        ''nonce-NDk5MzA5Mzk2OTA2NTU4NDIzNzIwNzE3NzUzNzM0NTg1OTE3NTQ=''; style-src
-        ''self'' ''unsafe-inline'' assets.bitstamp.net fonts.googleapis.com'
+        stats.g.doubleclick.net *.mixpanel.com *.branch.io hcaptcha.com *.hcaptcha.com
+        ; font-src ''self'' data: assets.bitstamp.net fonts.gstatic.com fonts.gstatic.cn
+        www.google.com ; frame-ancestors ''self''; frame-src ''self'' pixel-a.basis.net
+        *.youtube-nocookie.com 8720977.fls.doubleclick.net *.ledgerwallet.com *.google.com
+        www.recaptcha.net www.googletagmanager.com pixel.sitescout.com ctpe.net hcaptcha.com
+        *.hcaptcha.com ; img-src * data: blob:; media-src ''self'' assets.bitstamp.net
+        ; object-src ''self'' blob:; report-uri /api/report-csp/; script-src ''self''
+        ''report-sample'' ''unsafe-eval'' assets.bitstamp.net js-agent.newrelic.com
+        *.google-analytics.com d3dy5gmtp8yhk7.cloudfront.net www.googleadservices.com
+        www.googletagmanager.com www.gstatic.com www.gstatic.cn www.recaptcha.net
+        code.highcharts.com/stock/highstock.js bam.nr-data.net cdn.mxpnl.com app.link
+        hcaptcha.com *.hcaptcha.com ''nonce-MTkxNDkxMjE4MDk1NzU5MTgyMzM5NTczODI4MjU3NDMwNDU4MTM4'';
+        style-src ''self'' ''unsafe-inline'' assets.bitstamp.net fonts.googleapis.com
+        hcaptcha.com *.hcaptcha.com'
       Content-Language:
       - en
       Expires:
-      - Thu, 24 Sep 2020 09:31:03 GMT
+      - Fri, 12 Nov 2021 10:28:08 GMT
       Vary:
       - Authorization,Accept-Language,Cookie,Accept-Encoding
       X-Bts-Request-Trace-Id:
-      - Root=1-5f6c6757-adff36631deac701efd0fa34
+      - Root=1-618e41b8-406420153bca8dc726ebd3eb
       Cache-Control:
-      - max-age=0
+      - no-cache, no-store, must-revalidate, max-age=0
       X-Frame-Options:
       - SAMEORIGIN
       Set-Cookie:
-      - incap_ses_534_99025=KlTFN5oYFH4yIoL+VyZpB1dnbF8AAAAA0kBe3glCQyEwJExKspdo5g==;
+      - incap_ses_472_99025=c5MRZq8N1GJgqyiCGeKMBrhBjmEAAAAAewjcXQNgL2WiIKvDcp7bIg==;
         path=/; Domain=.bitstamp.net
-      - nlbi_99025=URXAGK3CD3JqY5APL9q5pgAAAACKdYTUy+dqRBWF4TwidKw8; path=/; Domain=.bitstamp.net
-      - stmpdid=zj38xDUdGXTnQCcQRK8Vj8OSpRf7T_ePC6RfY0Awe4_S2qEAvzlJbKBOXOtA1TJZ_reV5VK2L_rSfKLmcgjzKbQ;
-        expires=Thu, 23-Sep-2027 09:31:03 GMT; httponly; Max-Age=220752000; Path=/;
+      - nlbi_99025=ZAPmfoWmZUkfEoCZL9q5pgAAAAB01gKfYKvpyKgOdUjcSV2F; path=/; Domain=.bitstamp.net
+      - stmpdid=NZqO1Z8vifryXKEtXnksx_yNG53qcJlWf6S9eaIt3Yy8JQ8Td4xM1OfYHjxWnaCLWaE1WVpFDqz6Ba9d4_wjPLo;
+        expires=Fri, 10-Nov-2028 10:28:08 GMT; httponly; Max-Age=220752000; Path=/;
         secure
-      - visid_incap_99025=ouZZBgziQuudT6cPj5XjT1dnbF8AAAAAQUIPAAAAAADLfi9WZlloybyNscoqbhmF;
-        expires=Fri, 24 Sep 2021 08:01:52 GMT; HttpOnly; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=zpfFwiNqTvql/OnI94P7zbhBjmEAAAAAQUIPAAAAAAD4z+tdgVeVWlFhSRuFjh/7;
+        expires=Fri, 11 Nov 2022 14:24:57 GMT; HttpOnly; path=/; Domain=.bitstamp.net
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -80,33 +83,120 @@ http_interactions:
       Access-Control-Allow-Headers:
       - x-requested-with, Content-Type, origin, accept, cache-control
       X-Cdn:
-      - Incapsula
+      - Imperva
       X-Iinfo:
-      - 5-171875464-171865330 PNNy RT(1600939863362 18) q(0 0 0 0) r(1 1) U6
+      - 7-42204045-42204048 NNNY CT(2 1 0) RT(1636712888108 32) q(0 0 0 -1) r(2 2)
+        U6
     body:
       encoding: ASCII-8BIT
-      string: '{"bch_available": "0.00000000", "bch_balance": "0.00000000", "bch_reserved":
-        "0.00000000", "bch_withdrawal_fee": "0.00010000", "bchbtc_fee": "0.500", "bcheur_fee":
-        "0.500", "bchgbp_fee": "0.500", "bchusd_fee": "0.500", "btc_available": "0.00000000",
-        "btc_balance": "0.00000000", "btc_reserved": "0.00000000", "btc_withdrawal_fee":
-        "0.00050000", "btceur_fee": "0.500", "btcgbp_fee": "0.500", "btcpax_fee":
-        "0.500", "btcusd_fee": "0.500", "eth_available": "0.00000000", "eth_balance":
-        "0.00000000", "eth_reserved": "0.00000000", "eth_withdrawal_fee": "0.09000000",
-        "ethbtc_fee": "0.500", "etheur_fee": "0.500", "ethgbp_fee": "0.500", "ethpax_fee":
-        "0.500", "ethusd_fee": "0.500", "eur_available": "0.21", "eur_balance": "0.21",
-        "eur_reserved": "0.00", "eurusd_fee": "0.500", "gbp_available": "0.00", "gbp_balance":
-        "0.00", "gbp_reserved": "0.00", "gbpeur_fee": "0.500", "gbpusd_fee": "0.500",
-        "ltc_available": "0.00000000", "ltc_balance": "0.00000000", "ltc_reserved":
+      string: '{"aave_available": "0.00000000", "aave_balance": "0.00000000", "aave_reserved":
+        "0.00000000", "aave_withdrawal_fee": "0.07000000", "aavebtc_fee": "0.500",
+        "aaveeur_fee": "0.500", "aaveusd_fee": "0.500", "algo_available": "0.00000000",
+        "algo_balance": "0.00000000", "algo_reserved": "0.00000000", "algo_withdrawal_fee":
+        "0.10000000", "algobtc_fee": "0.500", "algoeur_fee": "0.500", "algousd_fee":
+        "0.500", "alpha_available": "0.00000000", "alpha_balance": "0.00000000", "alpha_reserved":
+        "0.00000000", "alpha_withdrawal_fee": "5.00000000", "alphaeur_fee": "0.500",
+        "alphausd_fee": "0.500", "audio_available": "0.00000000", "audio_balance":
+        "0.00000000", "audio_reserved": "0.00000000", "audio_withdrawal_fee": "10.00000000",
+        "audiobtc_fee": "0.500", "audioeur_fee": "0.500", "audiousd_fee": "0.500",
+        "axs_available": "0.00000000", "axs_balance": "0.00000000", "axs_reserved":
+        "0.00000000", "axs_withdrawal_fee": "0.10000000", "axseur_fee": "0.500", "axsusd_fee":
+        "0.500", "bat_available": "0.00000000", "bat_balance": "0.00000000", "bat_reserved":
+        "0.00000000", "bat_withdrawal_fee": "15.00000000", "batbtc_fee": "0.500",
+        "bateur_fee": "0.500", "batusd_fee": "0.500", "bch_available": "0.00000000",
+        "bch_balance": "0.00000000", "bch_reserved": "0.00000000", "bch_withdrawal_fee":
+        "0.00010000", "bchbtc_fee": "0.500", "bcheur_fee": "0.500", "bchgbp_fee":
+        "0.500", "bchusd_fee": "0.500", "btc_available": "0.00328000", "btc_balance":
+        "0.00328000", "btc_reserved": "0.00000000", "btc_withdrawal_fee": "0.00050000",
+        "btceur_fee": "0.500", "btcgbp_fee": "0.500", "btcpax_fee": "0.500", "btcusd_fee":
+        "0.500", "btcusdc_fee": "0.500", "btcusdt_fee": "0.500", "cel_available":
+        "0.00000000", "cel_balance": "0.00000000", "cel_reserved": "0.00000000", "cel_withdrawal_fee":
+        "1.00000000", "celeur_fee": "0.500", "celusd_fee": "0.500", "chz_available":
+        "0.00000000", "chz_balance": "0.00000000", "chz_reserved": "0.00000000", "chz_withdrawal_fee":
+        "10.00000000", "chzeur_fee": "0.500", "chzusd_fee": "0.500", "comp_available":
+        "0.00000000", "comp_balance": "0.00000000", "comp_reserved": "0.00000000",
+        "comp_withdrawal_fee": "0.03000000", "compbtc_fee": "0.500", "compeur_fee":
+        "0.500", "compusd_fee": "0.500", "crv_available": "0.00000000", "crv_balance":
+        "0.00000000", "crv_reserved": "0.00000000", "crv_withdrawal_fee": "1.00000000",
+        "crvbtc_fee": "0.500", "crveur_fee": "0.500", "crvusd_fee": "0.500", "dai_available":
+        "0.00000", "dai_balance": "0.00000", "dai_reserved": "0.00000", "dai_withdrawal_fee":
+        "15.00000", "daiusd_fee": "0.500", "enj_available": "0.00000000", "enj_balance":
+        "0.00000000", "enj_reserved": "0.00000000", "enj_withdrawal_fee": "5.00000000",
+        "enjeur_fee": "0.500", "enjusd_fee": "0.500", "eth2_available": "0.00000000",
+        "eth2_balance": "0.00000000", "eth2_reserved": "0.00000000", "eth2eth_fee":
+        "0.000", "eth2r_available": "0.00000000", "eth2r_balance": "0.00000000", "eth2r_reserved":
+        "0.00000000", "eth_available": "0.00000000", "eth_balance": "0.00000000",
+        "eth_reserved": "0.00000000", "eth_withdrawal_fee": "0.00350000", "ethbtc_fee":
+        "0.500", "etheur_fee": "0.500", "ethgbp_fee": "0.500", "ethpax_fee": "0.500",
+        "ethusd_fee": "0.500", "ethusdc_fee": "0.500", "ethusdt_fee": "0.500", "eur_available":
+        "0.21", "eur_balance": "0.21", "eur_reserved": "0.00", "eurt_available": "0.00000",
+        "eurt_balance": "0.00000", "eurt_reserved": "0.00000", "eurt_withdrawal_fee":
+        "2.00000", "eurteur_fee": "0.050", "eurtusd_fee": "0.050", "eurusd_fee": "0.050",
+        "fet_available": "0.00000000", "fet_balance": "0.00000000", "fet_reserved":
+        "0.00000000", "fet_withdrawal_fee": "5.00000000", "feteur_fee": "0.500", "fetusd_fee":
+        "0.500", "ftt_available": "0.00000000", "ftt_balance": "0.00000000", "ftt_reserved":
+        "0.00000000", "ftt_withdrawal_fee": "0.10000000", "ftteur_fee": "0.500", "fttusd_fee":
+        "0.500", "gbp_available": "0.00", "gbp_balance": "0.00", "gbp_reserved": "0.00",
+        "gbpeur_fee": "0.050", "gbpusd_fee": "0.050", "grt_available": "0.00000000",
+        "grt_balance": "0.00000000", "grt_reserved": "0.00000000", "grt_withdrawal_fee":
+        "25.00000000", "grteur_fee": "0.500", "grtusd_fee": "0.500", "gusd_available":
+        "0.00000", "gusd_balance": "0.00000", "gusd_reserved": "0.00000", "gusd_withdrawal_fee":
+        "1.00000", "gusdusd_fee": "0.500", "hbar_available": "0.00000000", "hbar_balance":
+        "0.00000000", "hbar_reserved": "0.00000000", "hbar_withdrawal_fee": "1.00000000",
+        "hbareur_fee": "0.500", "hbarusd_fee": "0.500", "knc_available": "0.00000000",
+        "knc_balance": "0.00000000", "knc_reserved": "0.00000000", "knc_withdrawal_fee":
+        "4.00000000", "kncbtc_fee": "0.500", "knceur_fee": "0.500", "kncusd_fee":
+        "0.500", "link_available": "0.00000000", "link_balance": "0.00000000", "link_reserved":
+        "0.00000000", "link_withdrawal_fee": "1.00000000", "linkbtc_fee": "0.500",
+        "linketh_fee": "0.500", "linkeur_fee": "0.500", "linkgbp_fee": "0.500", "linkusd_fee":
+        "0.500", "ltc_available": "0.00000000", "ltc_balance": "0.00000000", "ltc_reserved":
         "0.00000000", "ltc_withdrawal_fee": "0.00100000", "ltcbtc_fee": "0.500", "ltceur_fee":
-        "0.500", "ltcgbp_fee": "0.500", "ltcusd_fee": "0.500", "pax_available": "0.00",
-        "pax_balance": "0.00", "pax_reserved": "0.00", "pax_withdrawal_fee": "0.50",
-        "paxeur_fee": "0.500", "paxgbp_fee": "0.500", "paxusd_fee": "0.500", "usd_available":
-        "0.00", "usd_balance": "0.00", "usd_reserved": "0.00", "xlm_available": "0.00000000",
-        "xlm_balance": "0.00000000", "xlm_reserved": "0.00000000", "xlm_withdrawal_fee":
+        "0.500", "ltcgbp_fee": "0.500", "ltcusd_fee": "0.500", "matic_available":
+        "0.00000000", "matic_balance": "0.00000000", "matic_reserved": "0.00000000",
+        "matic_withdrawal_fee": "15.00000000", "maticeur_fee": "0.500", "maticusd_fee":
+        "0.500", "mkr_available": "0.00000000", "mkr_balance": "0.00000000", "mkr_reserved":
+        "0.00000000", "mkr_withdrawal_fee": "0.00500000", "mkrbtc_fee": "0.500", "mkreur_fee":
+        "0.500", "mkrusd_fee": "0.500", "omg_available": "0.00000000", "omg_balance":
+        "0.00000000", "omg_reserved": "0.00000000", "omg_withdrawal_fee": "3.00000000",
+        "omgbtc_fee": "0.500", "omgeur_fee": "0.500", "omggbp_fee": "0.500", "omgusd_fee":
+        "0.500", "pax_available": "0.00000", "pax_balance": "0.00000", "pax_reserved":
+        "0.00000", "pax_withdrawal_fee": "20.00000", "paxeur_fee": "0.050", "paxgbp_fee":
+        "0.050", "paxusd_fee": "0.050", "rgt_available": "0.00000000", "rgt_balance":
+        "0.00000000", "rgt_reserved": "0.00000000", "rgt_withdrawal_fee": "0.25000000",
+        "rgteur_fee": "0.500", "rgtusd_fee": "0.500", "sand_available": "0.00000000",
+        "sand_balance": "0.00000000", "sand_reserved": "0.00000000", "sand_withdrawal_fee":
+        "5.00000000", "sandeur_fee": "0.500", "sandusd_fee": "0.500", "skl_available":
+        "0.00000000", "skl_balance": "0.00000000", "skl_reserved": "0.00000000", "skl_withdrawal_fee":
+        "10.00000000", "skleur_fee": "0.500", "sklusd_fee": "0.500", "snx_available":
+        "0.00000000", "snx_balance": "0.00000000", "snx_reserved": "0.00000000", "snx_withdrawal_fee":
+        "0.20000000", "snxbtc_fee": "0.500", "snxeur_fee": "0.500", "snxusd_fee":
+        "0.500", "storj_available": "0.00000000", "storj_balance": "0.00000000", "storj_reserved":
+        "0.00000000", "storj_withdrawal_fee": "3.00000000", "storjeur_fee": "0.500",
+        "storjusd_fee": "0.500", "sushi_available": "0.00000000", "sushi_balance":
+        "0.00000000", "sushi_reserved": "0.00000000", "sushi_withdrawal_fee": "1.00000000",
+        "sushieur_fee": "0.500", "sushiusd_fee": "0.500", "sxp_available": "0.00000000",
+        "sxp_balance": "0.00000000", "sxp_reserved": "0.00000000", "sxp_withdrawal_fee":
+        "2.00000000", "sxpeur_fee": "0.500", "sxpusd_fee": "0.500", "uma_available":
+        "0.00000000", "uma_balance": "0.00000000", "uma_reserved": "0.00000000", "uma_withdrawal_fee":
+        "2.00000000", "umabtc_fee": "0.500", "umaeur_fee": "0.500", "umausd_fee":
+        "0.500", "uni_available": "0.00000000", "uni_balance": "0.00000000", "uni_reserved":
+        "0.00000000", "uni_withdrawal_fee": "0.60000000", "unibtc_fee": "0.500", "unieur_fee":
+        "0.500", "uniusd_fee": "0.500", "usd_available": "0.00", "usd_balance": "0.00",
+        "usd_reserved": "0.00", "usdc_available": "0.00000", "usdc_balance": "0.00000",
+        "usdc_reserved": "0.00000", "usdc_withdrawal_fee": "20.00000", "usdceur_fee":
+        "0.050", "usdcusd_fee": "0.050", "usdcusdt_fee": "0.050", "usdt_available":
+        "0.00000", "usdt_balance": "0.00000", "usdt_reserved": "0.00000", "usdt_withdrawal_fee":
+        "7.00000", "usdteur_fee": "0.050", "usdtusd_fee": "0.050", "xlm_available":
+        "0.00000000", "xlm_balance": "0.00000000", "xlm_reserved": "0.00000000", "xlm_withdrawal_fee":
         "0.00500000", "xlmbtc_fee": "0.500", "xlmeur_fee": "0.500", "xlmgbp_fee":
         "0.500", "xlmusd_fee": "0.500", "xrp_available": "0.00000000", "xrp_balance":
         "0.00000000", "xrp_reserved": "0.00000000", "xrp_withdrawal_fee": "0.02000000",
         "xrpbtc_fee": "0.500", "xrpeur_fee": "0.500", "xrpgbp_fee": "0.500", "xrppax_fee":
-        "0.500", "xrpusd_fee": "0.500"}'
-  recorded_at: Thu, 24 Sep 2020 09:31:03 GMT
+        "0.500", "xrpusd_fee": "0.500", "xrpusdt_fee": "0.500", "yfi_available": "0.00000000",
+        "yfi_balance": "0.00000000", "yfi_reserved": "0.00000000", "yfi_withdrawal_fee":
+        "0.00020000", "yfibtc_fee": "0.500", "yfieur_fee": "0.500", "yfiusd_fee":
+        "0.500", "zrx_available": "0.00000000", "zrx_balance": "0.00000000", "zrx_reserved":
+        "0.00000000", "zrx_withdrawal_fee": "3.00000000", "zrxbtc_fee": "0.500", "zrxeur_fee":
+        "0.500", "zrxusd_fee": "0.500"}'
+  recorded_at: Fri, 12 Nov 2021 10:28:08 GMT
 recorded_with: VCR 6.0.0

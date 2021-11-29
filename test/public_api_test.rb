@@ -11,14 +11,14 @@ class PublicApiTest < Minitest::Test
     VCR.use_cassette('ticker') do
       data = @bs.ticker
       assert_instance_of Bitstamp::Model::Ticker, data
-      assert_equal to_bigd(1000.73), data.open
-      assert_equal to_bigd(992.16), data.last
-      assert_equal to_bigd(1010.99), data.high
-      assert_equal to_bigd(975.10), data.low
-      assert_equal to_bigd(3551.86141636), data.volume
-      assert_equal to_bigd(990.11), data.bid
-      assert_equal to_bigd(992.16), data.ask
-      assert_equal Time.at(1486979366), data.timestamp
+      assert_equal to_bigd(64919.18), data.open
+      assert_equal to_bigd(64902.25), data.last
+      assert_equal to_bigd(68800.01), data.high
+      assert_equal to_bigd(62856.71), data.low
+      assert_equal to_bigd(3438.37163886), data.volume
+      assert_equal to_bigd(64888.36), data.bid
+      assert_equal to_bigd(64910.64), data.ask
+      assert_equal Time.at(1636645588), data.timestamp
     end
   end
 
@@ -28,21 +28,21 @@ class PublicApiTest < Minitest::Test
       data = @bs.order_book
       # ASKS side
       assert_includes data, 'asks'
-      [ { price: 995.06,  amount: 6.26490823 },
-        { price: 995.08, amount: 4.68 },
-        { price: 995.11, amount: 0.173 },
-        { price: 995.12, amount: 7.10593961 },
-        { price: 996.05, amount: 10 },
+      [ { price: 64864.60,  amount: 0.03855143},
+        { price: 64864.82, amount: 0.07710644 },
+        { price: 64872.63, amount: 0.17250000 },
+        { price: 64875.42, amount: 0.02312937 },
+        { price: 64875.79, amount: 0.98229016 },
       ].each_with_index do |offer, i|
         check_order_book(offer, data['asks'][i])
       end
       # BIDS side
       assert_includes data, 'bids'
-      [ { price: 994.95, amount: 0.01 },
-        { price: 994.51, amount: 23.73509177 },
-        { price: 994.5,  amount: 0.54519969 },
-        { price: 994.41, amount: 0.01 },
-        { price: 994.03, amount: 0.63086600 }
+      [ { price: 64840.59, amount: 0.03855322 },
+        { price: 64838.32, amount: 0.2 },
+        { price: 64838.31, amount: 0.07710521 },
+        { price: 64833.91, amount: 0.09614551 },
+        { price: 64831.01, amount: 0.23095809 }
       ].each_with_index do |offer, i|
         check_order_book(offer, data['bids'][i])
       end
@@ -53,9 +53,9 @@ class PublicApiTest < Minitest::Test
   def test_transactions
     VCR.use_cassette('public_transactions') do
       data = @bs.transactions.all
-      [ { timestamp: 1486989854, transaction_id: "13322326", price: 994.56, amount: -0.026 },
-        { timestamp: 1486989799, transaction_id: "13322325", price: 997.98, amount: 0.00896281 },
-        { timestamp: 1486989799, transaction_id: "13322324", price: 997.56, amount: 0.01211958 }
+      [ { timestamp: 1636646521, transaction_id: "207338988", price: 64811.41, amount: 0.47 },
+        { timestamp: 1636646521, transaction_id: "207338987", price: 64810.53, amount: 0.1 },
+        { timestamp: 1636646517, transaction_id: "207338975", price: 64774.80, amount: -0.007 }
       ].each_with_index do |tx, i|
         assert_equal Time.at(tx[:timestamp]), data[i].timestamp
         assert_equal tx[:transaction_id], data[i].transaction_id

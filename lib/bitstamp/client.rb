@@ -3,6 +3,7 @@ module Bitstamp
   
     def initialize(client_id, key, secret, curr_pair = DEFAULT_CURR_PAIR)
       @net = Bitstamp::NetComm.new(client_id, key, secret, curr_pair)
+      @curr_pair_sym = curr_pair
       @curr_pair = curr_pair[0..2], curr_pair[3..5]
     end
 
@@ -60,20 +61,14 @@ module Bitstamp
     end
 
     def withdraw_btc(amount, address)
-      r = @net.post('bitcoin_withdrawal', amount: amount, address: address)
+      r = @net.post('btc_withdrawal', amount: amount, address: address)
       r['id']
     end
 
 
     def deposit_address
-      r = @net.post('bitcoin_deposit_address') \
-              .tr('"', '')
-      r.include?('error') ? false : r
-    end
-
-
-    def unconfirmed_deposits
-      @net.post('unconfirmed_btc')
+      r = @net.post('btc_address')
+      r.include?('error') ? false : r['address']
     end
 
     

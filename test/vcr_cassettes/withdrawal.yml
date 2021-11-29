@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.bitstamp.net/api/bitcoin_withdrawal/
+    uri: https://www.bitstamp.net/api/v2/btc_withdrawal/
     body:
       encoding: US-ASCII
-      string: amount=0.005&address=14RbaeAUURBPsw6oQC52Ri4VMS2SR9ZqmK&key=3nJKF5X1wm0kb9xxoicWt9wCegji1DiC&nonce=1487093771&signature=2708B4482EB29068C6BBAD5BD173F0A84EF1966908E715F6AE7DE87CE74DCFD8
+      string: amount=0.0005&address=1CbccAu6DxoPcmP8GPvHjMsQGTrDTGrB6t&key=ha2aWXsDEYoaH5ZRRbAAL57s2HUZsHZ3&nonce=163795119543&signature=7A257D61A07D3EAD1A169FD1C264D96C558643300DD83548476E4AF23ABD3711
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -22,49 +22,72 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Access-Control-Allow-Headers:
-      - x-requested-with, Content-Type, origin, accept, cache-control
-      Access-Control-Allow-Methods:
-      - POST, GET
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - max-age=0
-      Content-Language:
-      - en
+      Date:
+      - Fri, 26 Nov 2021 18:26:36 GMT
       Content-Type:
       - application/json
-      Date:
-      - Tue, 14 Feb 2017 17:36:12 GMT
-      Expires:
-      - Tue, 14 Feb 2017 17:36:12 GMT
-      Last-Modified:
-      - Tue, 14 Feb 2017 17:36:12 GMT
-      Server:
-      - Apache
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubDomains
-      Vary:
-      - Accept-Language
-      X-Frame-Options:
-      - SAMEORIGIN
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips mod_wsgi/4.7.1 Python/2.7
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Last-Modified:
+      - Fri, 26 Nov 2021 18:26:36 GMT
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - 'default-src ''self'' ''report-sample''; base-uri ''self'' ; connect-src ''self''
+        wss://ws.bitstamp.net *.bitstamp.net *.trackjs.com *.google-analytics.com
+        stats.g.doubleclick.net *.mixpanel.com *.branch.io hcaptcha.com *.hcaptcha.com
+        ; font-src ''self'' data: assets.bitstamp.net fonts.gstatic.com fonts.gstatic.cn
+        www.google.com ; frame-ancestors ''self''; frame-src ''self'' pixel-a.basis.net
+        *.youtube-nocookie.com 8720977.fls.doubleclick.net *.ledgerwallet.com *.google.com
+        www.recaptcha.net www.googletagmanager.com pixel.sitescout.com ctpe.net hcaptcha.com
+        *.hcaptcha.com ; img-src * data: blob:; media-src ''self'' assets.bitstamp.net
+        ; object-src ''self'' blob:; report-uri /api/report-csp/; script-src ''self''
+        ''report-sample'' ''unsafe-eval'' assets.bitstamp.net js-agent.newrelic.com
+        *.google-analytics.com d3dy5gmtp8yhk7.cloudfront.net www.googleadservices.com
+        www.googletagmanager.com www.gstatic.com www.gstatic.cn www.recaptcha.net
+        code.highcharts.com/stock/highstock.js bam.nr-data.net cdn.mxpnl.com app.link
+        hcaptcha.com *.hcaptcha.com ''nonce-MjQyODMwNjc3OTgyNjM4MTAwNjYzODg4MzIxMjc3NDMzMzMwNDQx'';
+        style-src ''self'' ''unsafe-inline'' assets.bitstamp.net fonts.googleapis.com
+        hcaptcha.com *.hcaptcha.com'
+      Content-Language:
+      - en
+      Expires:
+      - Fri, 26 Nov 2021 18:26:36 GMT
+      Vary:
+      - Authorization,Accept-Language,Cookie,Accept-Encoding
+      X-Bts-Request-Trace-Id:
+      - Root=1-61a126dc-4eb3707b756c9f0754cf908a
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
       Set-Cookie:
-      - incap_ses_408_99025=TIqNDgTGZX7+orlUW4KpBQFAo1gAAAAAAbFGUdeO3FK+XeppG6YlRQ==;
+      - incap_ses_1100_99025=v/U1dGFqUGEwmgV5p/xDD9wmoWEAAAAATctzMwEpfmLTl4ZaYjakBw==;
         path=/; Domain=.bitstamp.net
-      - nlbi_99025=mlN3XXbtgmJR5Fo/8F1n9AAAAAC6CQEm/AhboX40ewVHqWrP; path=/; Domain=.bitstamp.net
-      - visid_incap_99025=YehfzcoTQMimyUdyI3FkbgFAo1gAAAAAQUIPAAAAAABbr7OJ8x3s2arLcaaEtQF4;
-        expires=Wed, 14 Feb 2018 14:22:29 GMT; path=/; Domain=.bitstamp.net
-      X-Iinfo:
-      - 2-4047565-4047569 NNNN CT(1 2 0) RT(1487093761473 36) q(0 0 0 1) r(0 0) U6
+      - nlbi_99025=MUrUNGOZDTl79ZT6L9q5pgAAAACoaUpP3D7EhMcS9Wi3QP0S; path=/; Domain=.bitstamp.net
+      - stmpdid=hIeiXtrU21xhtXU7fJECgKaM7B9cNoUlbM1dNDkSz6BYSC9Zjvf8MdJOREUSrHCXXIcu9yAQsZ30gB5MdLfgJSI;
+        expires=Fri, 24-Nov-2028 18:26:36 GMT; httponly; Max-Age=220752000; Path=/;
+        secure
+      - visid_incap_99025=X8Tq7C+fS22cJU5X/rDlusIloWEAAAAAQUIPAAAAAAATHiyFsMRPKXcb1vCwOpnw;
+        expires=Sat, 26 Nov 2022 14:08:18 GMT; HttpOnly; path=/; Domain=.bitstamp.net
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, GET
+      Access-Control-Allow-Headers:
+      - x-requested-with, Content-Type, origin, accept, cache-control
       X-Cdn:
-      - Incapsula
+      - Imperva
+      X-Iinfo:
+      - 13-137262385-137255690 PNNN RT(1637951196135 38) q(0 0 0 0) r(1 1) U6
     body:
       encoding: ASCII-8BIT
-      string: '{"id": 1404801}'
-    http_version: 
-  recorded_at: Tue, 14 Feb 2017 17:36:13 GMT
-recorded_with: VCR 3.0.3
+      string: '{"id": 12941822}'
+  recorded_at: Fri, 26 Nov 2021 18:26:36 GMT
+recorded_with: VCR 6.0.0

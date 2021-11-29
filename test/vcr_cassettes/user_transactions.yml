@@ -5,7 +5,7 @@ http_interactions:
     uri: https://www.bitstamp.net/api/v2/user_transactions/
     body:
       encoding: US-ASCII
-      string: offset=56&limit=5&key=1UiYqsdEoZrxqfDog4ReV5jwYkDtbR7q&nonce=1487100252&signature=6E09B4580BF60C3D9DFC8E719284A48EC55D3A8506F27E6FF51541DA0226083E
+      string: offset=0&limit=2&key=ha2aWXsDEYoaH5ZRRbAAL57s2HUZsHZ3&nonce=163794453921&signature=8F461985C172A09434BF6A6B97F18938F3089EBE6D6EE3A8BE16B4328765E7D5
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -22,59 +22,76 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Access-Control-Allow-Headers:
-      - x-requested-with, Content-Type, origin, accept, cache-control
-      Access-Control-Allow-Methods:
-      - POST, GET
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - max-age=0
-      Content-Language:
-      - en
+      Date:
+      - Fri, 26 Nov 2021 16:35:40 GMT
       Content-Type:
       - application/json
-      Date:
-      - Tue, 14 Feb 2017 19:24:13 GMT
-      Expires:
-      - Tue, 14 Feb 2017 19:24:13 GMT
-      Last-Modified:
-      - Tue, 14 Feb 2017 19:24:13 GMT
-      Server:
-      - Apache
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubDomains
-      Vary:
-      - Accept-Language
-      X-Frame-Options:
-      - SAMEORIGIN
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips mod_wsgi/4.7.1 Python/2.7
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Last-Modified:
+      - Fri, 26 Nov 2021 16:35:40 GMT
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - 'default-src ''self'' ''report-sample''; base-uri ''self'' ; connect-src ''self''
+        wss://ws.bitstamp.net *.bitstamp.net *.trackjs.com *.google-analytics.com
+        stats.g.doubleclick.net *.mixpanel.com *.branch.io hcaptcha.com *.hcaptcha.com
+        ; font-src ''self'' data: assets.bitstamp.net fonts.gstatic.com fonts.gstatic.cn
+        www.google.com ; frame-ancestors ''self''; frame-src ''self'' pixel-a.basis.net
+        *.youtube-nocookie.com 8720977.fls.doubleclick.net *.ledgerwallet.com *.google.com
+        www.recaptcha.net www.googletagmanager.com pixel.sitescout.com ctpe.net hcaptcha.com
+        *.hcaptcha.com ; img-src * data: blob:; media-src ''self'' assets.bitstamp.net
+        ; object-src ''self'' blob:; report-uri /api/report-csp/; script-src ''self''
+        ''report-sample'' ''unsafe-eval'' assets.bitstamp.net js-agent.newrelic.com
+        *.google-analytics.com d3dy5gmtp8yhk7.cloudfront.net www.googleadservices.com
+        www.googletagmanager.com www.gstatic.com www.gstatic.cn www.recaptcha.net
+        code.highcharts.com/stock/highstock.js bam.nr-data.net cdn.mxpnl.com app.link
+        hcaptcha.com *.hcaptcha.com ''nonce-MjExMTYzNzcyNTM4MzM1MzczMTIzMTIwMTgwMjg2MTQzMDg0Mzc0'';
+        style-src ''self'' ''unsafe-inline'' assets.bitstamp.net fonts.googleapis.com
+        hcaptcha.com *.hcaptcha.com'
+      Content-Language:
+      - en
+      Expires:
+      - Fri, 26 Nov 2021 16:35:40 GMT
+      Vary:
+      - Authorization,Accept-Language,Cookie,Accept-Encoding
+      X-Bts-Request-Trace-Id:
+      - Root=1-61a10cdc-774f71535a185ef108701a5b
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
       Set-Cookie:
-      - incap_ses_408_99025=Bxw9dTaOuQ31C9hUW4KpBVJZo1gAAAAAfZqLvDWEd/jrjavn4/Nywg==;
+      - incap_ses_1105_99025=mtbAaSiTqm4k/9G0v8ZVD9sMoWEAAAAASb1BPZduKR/rZ0cw/Gq9mA==;
         path=/; Domain=.bitstamp.net
-      - nlbi_99025=OFo4VQ2xjSMgrUip8F1n9AAAAAAqKjZveLUUDwcRkGoFyJgP; path=/; Domain=.bitstamp.net
-      - visid_incap_99025=Up8AC8AKQmyXgZkXxP/qKvBYo1gAAAAAQUIPAAAAAABDbBsmfU/M9xrP+/rOmQmM;
-        expires=Wed, 14 Feb 2018 14:22:51 GMT; path=/; Domain=.bitstamp.net
-      X-Iinfo:
-      - 9-23460117-23341925 PNNN RT(1487100242098 46) q(0 0 0 4) r(0 0) U6
+      - nlbi_99025=ET4AHeV/RWiV7lGvL9q5pgAAAAAWKiWWxwV0Xk1kiCGNQ25d; path=/; Domain=.bitstamp.net
+      - stmpdid=YCW_iI9Of95YhccQ620SVbGkKx_chd-9rLjLNPIIiAXWJelo2oU9LuvXv8S3uMkTiYWXH63ODRu65bBY_4Vp5Fk;
+        expires=Fri, 24-Nov-2028 16:35:40 GMT; httponly; Max-Age=220752000; Path=/;
+        secure
+      - visid_incap_99025=NaVcV1B3RQaJrSmXppTeL9sMoWEAAAAAQUIPAAAAAAA/CXoT7gOHKN7ea6Q2cmcz;
+        expires=Sat, 26 Nov 2022 12:30:45 GMT; HttpOnly; path=/; Domain=.bitstamp.net
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, GET
+      Access-Control-Allow-Headers:
+      - x-requested-with, Content-Type, origin, accept, cache-control
       X-Cdn:
-      - Incapsula
+      - Imperva
+      X-Iinfo:
+      - 7-106314949-106306801 PNNy RT(1637944539668 48) q(0 0 0 -1) r(0 0) U6
     body:
       encoding: ASCII-8BIT
-      string: '[{"fee": "0E-8", "btc_usd": "0.00", "datetime": "2015-08-25 07:20:41",
-        "usd": 0.0, "btc": "0.01500000", "type": "0", "id": 9150041, "eur": 0.0},
-        {"fee": "0E-8", "btc_usd": "0.00", "datetime": "2015-08-23 07:05:47", "usd":
-        0.0, "btc": "-0.04501871", "type": "1", "id": 9131442, "eur": 0.0}, {"usd":
-        "-0.62", "btc_usd": 231.18000000, "datetime": "2015-08-23 07:01:39", "fee":
-        "0.01000000", "btc": "0.00268189", "type": "2", "id": 9131435, "eur": 0.0},
-        {"usd": "-8.33", "btc_usd": 231.16000000, "order_id": 79467647, "datetime":
-        "2015-08-23 07:01:37", "fee": "0.03000000", "btc": "0.03601406", "type": "2",
-        "id": 9131434, "eur": 0.0}, {"usd": "9.02", "btc_usd": 264.45000000, "order_id":
-        78374919, "datetime": "2015-08-13 13:48:45", "fee": "0.03000000", "btc": "-0.03409194",
-        "type": "2", "id": 9080754, "eur": 0.0}]'
-    http_version: 
-  recorded_at: Tue, 14 Feb 2017 19:24:13 GMT
-recorded_with: VCR 3.0.3
+      string: '[{"usd": "-27.50", "btc_usd": 55000.00000000, "order_id": 1429194368086017,
+        "datetime": "2021-11-26 08:37:52.735000", "fee": "0.13750", "btc": "0.00050000",
+        "type": "2", "id": 210057823, "eur": 0.0}, {"usd": "28.50", "btc_usd": 57000.00000000,
+        "order_id": 1429194707623938, "datetime": "2021-11-24 15:50:46.678000", "fee":
+        "0.14250", "btc": "-0.00050000", "type": "2", "id": 209752784, "eur": 0.0}]'
+  recorded_at: Fri, 26 Nov 2021 16:35:40 GMT
+recorded_with: VCR 6.0.0

@@ -21,7 +21,7 @@ GEM
     crack (0.4.5)
       rexml
     hashdiff (1.0.1)
-    i18n (1.8.10)
+    i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
     minitest (5.14.4)
@@ -35,8 +35,8 @@ GEM
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
     vcr (6.0.0)
-    webmock (3.13.0)
-      addressable (>= 2.3.6)
+    webmock (3.14.0)
+      addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
 
@@ -45,10 +45,10 @@ PLATFORMS
 
 DEPENDENCIES
   bitstamp!
-  bundler (~> 2.1)
-  minitest (~> 5.10)
+  bundler
+  minitest
   pry
-  rake (~> 13.0)
+  rake
   vcr
   webmock
 

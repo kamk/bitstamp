@@ -21,31 +21,32 @@ http_interactions:
       message: OK
     headers:
       Etag:
-      - '"67716-b3-548665cec1994"'
+      - '"4151917245"'
       Last-Modified:
-      - Mon, 13 Feb 2017 09:49:26 GMT
+      - Thu, 11 Nov 2021 15:46:29 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '138'
-      Connection:
-      - keep-alive
+      - '147'
+      Cache-Control:
+      - max-age=1, public
+      Expires:
+      - Thu, 11 Nov 2021 15:46:30 GMT
       Date:
-      - Mon, 13 Feb 2017 09:49:29 GMT
+      - Thu, 11 Nov 2021 15:46:29 GMT
       Set-Cookie:
-      - incap_ses_184_99025=hPcgWyu1njjY+GEHJ7ONAimBoVgAAAAAsZA19t3Z1ag4UUOB4KBUCA==;
+      - incap_ses_877_99025=gPYtcx+IgF0a8gryTrsrDNU6jWEAAAAAIulQEke16wszek3Vk5uZFg==;
         path=/; Domain=.bitstamp.net
-      - visid_incap_99025=0QOFF1kARPiS/ZExSMlQwg6AoVgAAAAAQUIPAAAAAACpsv/7y4XXnNOFLpeHDqpQ;
-        expires=Tue, 13 Feb 2018 09:09:17 GMT; path=/; Domain=.bitstamp.net
-      X-Iinfo:
-      - 9-541749-0 0CNN RT(1486979368960 59) q(0 -1 -1 0) r(0 -1)
+      - visid_incap_99025=CPp/dCeDRQyMrf7W18JZltU6jWEAAAAAQUIPAAAAAABWBkOudJ/JSHP9tvSTvRHK;
+        expires=Fri, 11 Nov 2022 06:51:43 GMT; HttpOnly; path=/; Domain=.bitstamp.net
       X-Cdn:
-      - Incapsula
+      - Imperva
+      X-Iinfo:
+      - 5-54893971-54893094 2CNN RT(1636645589519 26) q(0 0 0 0) r(0 0)
     body:
       encoding: ASCII-8BIT
-      string: '{"high": "1010.99", "last": "992.16", "timestamp": "1486979366", "bid":
-        "990.11", "vwap": "996.20", "volume": "3551.86141636", "low": "975.10", "ask":
-        "992.16", "open": "1000.73"}'
-    http_version: 
-  recorded_at: Mon, 13 Feb 2017 09:49:29 GMT
-recorded_with: VCR 3.0.3
+      string: '{"high": "68800.01", "last": "64902.25", "timestamp": "1636645588",
+        "bid": "64888.36", "vwap": "65443.20", "volume": "3438.37163886", "low": "62856.71",
+        "ask": "64910.64", "open": "64919.18"}'
+  recorded_at: Thu, 11 Nov 2021 15:46:29 GMT
+recorded_with: VCR 6.0.0
