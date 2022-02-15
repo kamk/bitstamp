@@ -1,9 +1,3 @@
-require 'resolv'
-require 'uri'
-require 'net/http'
-require 'json'
-require 'openssl'
-
 module Bitstamp
   class NetComm
 
@@ -11,6 +5,17 @@ module Bitstamp
     SKIP_CURR_RESOURCES = %w(user_transactions order_status cancel_order withdrawal_requests btc_withdrawal btc_address transfer-to-main transfer-from-main)
 
     SHA256_DIGEST = OpenSSL::Digest.new('sha256')
+
+    class HttpGetRequest < Net::HTTP::Get
+    end
+
+    class HttpPostRequest < Net::HTTP::Post
+      private
+      def supply_default_content_type
+        # skip setting default content-type to application/x-www-form-urlencoded
+      end
+    end
+
 
     def initialize(client_id, key, secret, curr_pair)
       @client_id = client_id
@@ -21,12 +26,12 @@ module Bitstamp
 
 
     def get(resource, params = {})
-      perform(Net::HTTP::Get, resource, params)
+      perform(HttpGetRequest, resource, params)
     end
 
 
     def post(resource, params = {})
-      perform(Net::HTTP::Post, resource, params)
+      perform(HttpPostRequest, resource, params)
     end
 
 
@@ -38,10 +43,6 @@ module Bitstamp
     
     def perform(req_klass, resource, params)
       result = {}
-      if PRIVATE_RESOURCES.include?(resource)
-        raise Bitstamp::Error.new("Missing API keys") unless configured?
-        params.merge!(signature_params)
-      end
       uri_parts = [ Bitstamp::SERVICE_URI, 'v2', resource ]
       uri_parts << @curr_pair unless SKIP_CURR_RESOURCES.include?(resource) ||
                                      params.delete(:skip_currency_pair)
@@ -49,22 +50,34 @@ module Bitstamp
       uri = URI(uri_parts.join('/'))
       
       params = URI.encode_www_form(params)
-      uri.query = params if req_klass == Net::HTTP::Get && !params.empty?
+      uri.query = params if req_klass == HttpGetRequest && !params.empty?
 
       begin
         Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
           req = req_klass.new(uri)
-          if req_klass == Net::HTTP::Post
+          if req_klass == HttpPostRequest && !params.empty?
             req['Content-Type'] = 'application/x-www-form-urlencoded'
             req.body = params
           end
+          
+          if PRIVATE_RESOURCES.include?(resource)
+            raise Bitstamp::Error.new("Missing API keys") unless configured?
+            req['X-Auth'] = 'BITSTAMP ' + @key
+            req['X-Auth-Nonce'] = SecureRandom.uuid
+            req['X-Auth-Timestamp'] = (Time.now.to_f * 1000).to_i
+            req['X-Auth-Version'] = 'v2'
+            req['X-Auth-Signature'] = OpenSSL::HMAC.hexdigest(
+                                        SHA256_DIGEST, @secret, message_to_sign(req)
+                                      ).upcase
+          end
+          
           response = http.request(req)
           unless response.is_a?(Net::HTTPSuccess)
             http.finish
             raise Bitstamp::Error.new(sprintf("%d %s", response.code, response.message))
           end
           result = JSON.parse(response.body)
-          if result.class == Hash            
+          if result.class == Hash
             err = result['error'] ||
                 (result['status'] && result['status'] == 'error' && result['reason'])
             if err
@@ -79,17 +92,18 @@ module Bitstamp
       result
     end
 
-    
-    def signature_params
-      nonce = (Time.now.to_f * 100).to_i
-      message = sprintf("%d%d%s", nonce, @client_id, @key)
-      sleep 1
-      {
-        key: @key,
-        nonce: nonce,
-        signature: OpenSSL::HMAC.hexdigest(SHA256_DIGEST, @secret, message) \
-                                .upcase
-      }
+
+    def message_to_sign(req)
+      req['X-Auth'] +
+        req.method +
+        req.uri.host +
+        req.uri.path +
+        (req.uri.query ? ('?' + req.uri.query) : '') +
+        req['Content-Type'].to_s +
+        req['X-Auth-Nonce'] +
+        req['X-Auth-Timestamp'] +
+        req['X-Auth-Version'] +
+        req.body.to_s
     end
 
 
