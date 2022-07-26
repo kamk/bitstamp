@@ -1,4 +1,6 @@
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+# frozen_string_literal: true
+
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'minitest/autorun'
 require 'webmock/minitest'
 
@@ -7,9 +9,8 @@ require 'pry'
 
 require 'bitstamp'
 
-
 VCR.configure do |config|
-  config.cassette_library_dir = "test/vcr_cassettes"
+  config.cassette_library_dir = 'test/vcr_cassettes'
   config.default_cassette_options = {
     match_requests_on: [
       :method,
@@ -19,16 +20,13 @@ VCR.configure do |config|
   config.hook_into :webmock
 end
 
-
 # API keys
 CLIENT_ID = 0
-KEY = "<API key for main account>"
-SECRET = "<API secret for main account>"
+KEY = '<MAIN KEY>'
+SECRET = '<MAIN SECRET>'
 SUB_ID = 0
-SUB_KEY = "<API key for sub account>"
-SUB_SECRET = "<API secret for sub account>"
-
-
+SUB_KEY = '<SUB KEY>'
+SUB_SECRET = '<SUB SECRET>'
 
 # BigDecimal numbers
 def to_bigd(num)

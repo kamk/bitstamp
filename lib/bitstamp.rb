@@ -1,28 +1,29 @@
+# frozen_string_literal: true
+
 require 'active_support'
 require 'active_model'
 require 'bigdecimal'
 
-require "bitstamp/version"
-require "bitstamp/model/base"
-require "bitstamp/model/ticker"
-require "bitstamp/model/offer"
-require "bitstamp/model/transaction"
-require "bitstamp/model/balance"
-require "bitstamp/model/order"
-require "bitstamp/transactions"
-require "bitstamp/orders"
-require "bitstamp/error"
-require "bitstamp/net_comm"
-require "bitstamp/client"
+require 'bitstamp/version'
+require 'bitstamp/model/base'
+require 'bitstamp/model/ticker'
+require 'bitstamp/model/offer'
+require 'bitstamp/model/transaction'
+require 'bitstamp/model/balance'
+require 'bitstamp/model/order'
+require 'bitstamp/transactions'
+require 'bitstamp/orders'
+require 'bitstamp/error'
+require 'bitstamp/net_comm'
+require 'bitstamp/client'
 
-
+# Bitstamp client library
 module Bitstamp
-  SERVICE_URI = "https://www.bitstamp.net/api"
+  SERVICE_URI = 'https://www.bitstamp.net/api'
   DEFAULT_CURR_PAIR = 'btcusd'
 
   NET_TIMEOUT = 10    # secs
 
-  private
   def self.to_api_params(opts)
     r = {}
     opts.each do |k, v|
@@ -32,5 +33,4 @@ module Bitstamp
     end
     r
   end
-  
 end

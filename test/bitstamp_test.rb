@@ -1,9 +1,9 @@
-require 'test_helper'
+# frozen_string_literal: true
+
+require_relative 'test_helper'
 
 class BitstampTest < Minitest::Test
-  
   def test_that_it_has_a_version_number
     refute_nil ::Bitstamp::VERSION
   end
-
 end

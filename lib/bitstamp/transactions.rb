@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module Bitstamp
+  # Public (all) or private (user) transactions
   class Transactions
-    
     def initialize(net, curr_pair)
       @net = net
       @curr_pair = curr_pair
@@ -9,21 +11,16 @@ module Bitstamp
     # Public transactions
     def all(recent = 'hour')
       @net.get('transactions', time: recent) \
-          .map{ |t| Bitstamp::Model::Transaction.new(:public, @curr_pair, t) }
+          .map { |t| Bitstamp::Model::Transaction.new(:public, @curr_pair, t) }
     end
 
-    
     # User transactions
     def user(options = {})
       order_id = options.delete(:order_id)
       data = @net.post('user_transactions', options)
-      if order_id
-        data.select!{ |t| t['order_id'] == order_id }
-      end
-      data.map{ |t| Bitstamp::Model::Transaction.new(:private, @curr_pair, t) } \
-          .reject{ |t| t.nil? }
+      data.select! { |t| t['order_id'] == order_id } if order_id
+      data.map { |t| Bitstamp::Model::Transaction.new(:private, @curr_pair, t) } \
+          .reject(&:nil?)
     end
-
-
   end
 end

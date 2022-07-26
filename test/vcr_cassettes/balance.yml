@@ -4,8 +4,8 @@ http_interactions:
     method: post
     uri: https://www.bitstamp.net/api/v2/balance/btcusd/
     body:
-      encoding: US-ASCII
-      string: key=ha2aWXsDEYoaH5ZRRbAAL57s2HUZsHZ3&nonce=163775950422&signature=15E152575C8A764C31B9714D901532970709010A3A44778EC1BE09A8841D98A5
+      encoding: UTF-8
+      string: ''
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -15,15 +15,23 @@ http_interactions:
       - Ruby
       Host:
       - www.bitstamp.net
-      Content-Type:
-      - application/x-www-form-urlencoded
+      X-Auth:
+      - BITSTAMP H3iK98mcBMSax81GvdpZEIrLHneYODQK
+      X-Auth-Nonce:
+      - 96e9d9a3-15f1-4ca5-8db3-9cc3bcbab0dc
+      X-Auth-Timestamp:
+      - '1658835425784'
+      X-Auth-Version:
+      - v2
+      X-Auth-Signature:
+      - 679F4D9F5E655B56B3632779A49E7B2A5AC023AE0D76A6167C4D770C4373E78A
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 24 Nov 2021 13:11:45 GMT
+      - Tue, 26 Jul 2022 11:37:06 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -31,11 +39,11 @@ http_interactions:
       Connection:
       - keep-alive
       Server:
-      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips mod_wsgi/4.7.1 Python/2.7
+      - Apache
       Strict-Transport-Security:
       - max-age=63072000; includeSubDomains
-      Last-Modified:
-      - Wed, 24 Nov 2021 13:11:45 GMT
+      X-Server-Auth-Signature:
+      - 49beca048275c80d766110822f12fd51dd748b60e9e73a0a84a8346605150ab4
       X-Xss-Protection:
       - 1; mode=block
       Content-Security-Policy:
@@ -46,36 +54,36 @@ http_interactions:
         www.google.com ; frame-ancestors ''self''; frame-src ''self'' pixel-a.basis.net
         *.youtube-nocookie.com 8720977.fls.doubleclick.net *.ledgerwallet.com *.google.com
         www.recaptcha.net www.googletagmanager.com pixel.sitescout.com ctpe.net hcaptcha.com
-        *.hcaptcha.com ; img-src * data: blob:; media-src ''self'' assets.bitstamp.net
-        ; object-src ''self'' blob:; report-uri /api/report-csp/; script-src ''self''
-        ''report-sample'' ''unsafe-eval'' assets.bitstamp.net js-agent.newrelic.com
-        *.google-analytics.com d3dy5gmtp8yhk7.cloudfront.net www.googleadservices.com
-        www.googletagmanager.com www.gstatic.com www.gstatic.cn www.recaptcha.net
-        code.highcharts.com/stock/highstock.js bam.nr-data.net cdn.mxpnl.com app.link
-        hcaptcha.com *.hcaptcha.com ''nonce-MzE1MDM1MDM0MTEyODYyODc0ODk3NTk5MTE3ODY2NzY1MTk3OA=='';
+        *.hcaptcha.com player.twitch.tv ; img-src * data: blob:; media-src ''self''
+        assets.bitstamp.net ; object-src ''self'' blob:; report-uri /api/report-csp/;
+        script-src ''self'' ''report-sample'' ''unsafe-eval'' assets.bitstamp.net
+        js-agent.newrelic.com *.google-analytics.com d3dy5gmtp8yhk7.cloudfront.net
+        www.googleadservices.com www.googletagmanager.com www.gstatic.com www.gstatic.cn
+        www.recaptcha.net code.highcharts.com/stock/highstock.js bam.nr-data.net cdn.mxpnl.com
+        app.link hcaptcha.com *.hcaptcha.com ''nonce-MTIzMzI3MTcxNjgxMjA4Njk2ODQ4MDMxMjYyMTc2NjIzODk3MA=='';
         style-src ''self'' ''unsafe-inline'' assets.bitstamp.net fonts.googleapis.com
         hcaptcha.com *.hcaptcha.com'
       Content-Language:
       - en
       Expires:
-      - Wed, 24 Nov 2021 13:11:45 GMT
+      - Tue, 26 Jul 2022 11:37:05 GMT
       Vary:
       - Authorization,Accept-Language,Cookie,Accept-Encoding
       X-Bts-Request-Trace-Id:
-      - Root=1-619e3a11-269ff95834ece19e4969458b
+      - Root=1-62dfd1e1-330b355b6b2e28111a595e32
       Cache-Control:
       - no-cache, no-store, must-revalidate, max-age=0
       X-Frame-Options:
       - SAMEORIGIN
       Set-Cookie:
-      - incap_ses_730_99025=yZHFTUxjTmJbjYj2oXshChE6nmEAAAAAD8od3Jswhg5008+iElmcDw==;
+      - incap_ses_1309_99025=WT65czH2HV2xT9VAI4EqEuLR32IAAAAAuG28vfu6/zvlldJKgGbPbQ==;
         path=/; Domain=.bitstamp.net
-      - nlbi_99025=wObjO+mkzjl+6vlAL9q5pgAAAAABCJtcRL6t6ChV19tN82gs; path=/; Domain=.bitstamp.net
-      - stmpdid=htMSl1gLNoTVDglsTJVuvQrCTJ6u7Kt_Tar22rzmFtZYuqczhalDEem8YPvTE_bc4oqWg0yROFhMvbT_8M81rpw;
-        expires=Wed, 22-Nov-2028 13:11:45 GMT; httponly; Max-Age=220752000; Path=/;
+      - nlbi_99025=2CUuZJL4ez/CZkjb5Q12eAAAAAAJ6EU4EI6xLcDibxL7nfm3; path=/; Domain=.bitstamp.net
+      - stmpdid=LnaOE-PmnTeUSmrm-4llqOpvbJInbhBsEL4a6SaHuWalS1GSB8z9UhJGIVnzz9ehlA_570zqWo0l0z00iOX9QTs;
+        expires=Tue, 24-Jul-2029 11:37:05 GMT; httponly; Max-Age=220752000; Path=/;
         secure
-      - visid_incap_99025=bAupbZq4SvSgZITtMUQKGRE6nmEAAAAAQUIPAAAAAAC6qovL4OPOVpQ60AsDcftL;
-        expires=Thu, 24 Nov 2022 11:19:22 GMT; HttpOnly; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=iXwD/vwbRTGS0XSMMCDQVr/Q32IAAAAAQUIPAAAAAAA8Z03AJ3eFJKIKVYMaKOS+;
+        expires=Tue, 25 Jul 2023 22:26:49 GMT; HttpOnly; path=/; Domain=.bitstamp.net
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -85,11 +93,11 @@ http_interactions:
       X-Cdn:
       - Imperva
       X-Iinfo:
-      - 12-77317495-77308953 PNNy RT(1637759505163 40) q(0 0 0 -1) r(1 1) U6
+      - 8-15377579-15376265 PNNy RT(1658835425094 32) q(0 0 0 0) r(0 0) U6
     body:
       encoding: ASCII-8BIT
-      string: '{"btc_available": "0.00453000", "btc_balance": "0.00503000", "btc_reserved":
-        "0.00050000", "fee": 0.500, "usd_available": "0.93", "usd_balance": "28.57",
-        "usd_reserved": "27.64"}'
-  recorded_at: Wed, 24 Nov 2021 13:11:45 GMT
-recorded_with: VCR 6.0.0
+      string: '{"btc_available": "0.00031778", "btc_balance": "0.00131778", "btc_reserved":
+        "0.00100000", "fee": 0.500, "usd_available": "8.17", "usd_balance": "29.27",
+        "usd_reserved": "21.10"}'
+  recorded_at: Tue, 26 Jul 2022 11:37:05 GMT
+recorded_with: VCR 6.1.0
