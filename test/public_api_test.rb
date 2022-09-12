@@ -28,18 +28,18 @@ class PublicApiTest < Minitest::Test
       # BIDS side
       assert_includes data, 'bids'
       [
-        { price: 23804.70, amount: 1.30965829 },
-        { price: 23804.11, amount: 0.14698650 },
-        { price: 23801.07, amount: 0.54614901 }
+        { price: 23889, amount: 0.41859738 },
+        { price: 23886, amount: 0.00502708 },
+        { price: 23882, amount: 1.48375279 }
       ].each_with_index do |offer, i|
         check_order_book(offer, data['bids'][i])
       end
       # ASKS side
       assert_includes data, 'asks'
       [
-        { price: 23823.51, amount: 0.14698035 },
-        { price: 23826.68, amount: 1.09443581 },
-        { price: 23826.69, amount: 0.54451068 }
+        { price: 23902, amount: 0.00442 },
+        { price: 23908, amount: 0.00706245 },
+        { price: 23909, amount: 0.23764126 }
       ].each_with_index do |offer, i|
         check_order_book(offer, data['asks'][i])
       end

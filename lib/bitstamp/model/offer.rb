@@ -8,7 +8,7 @@ module Bitstamp
 
       def initialize(data = [])
         super()
-        self.price = BigDecimal(data[0])
+        self.price = Integer(data[0])
         self.amount = BigDecimal(data[1])
       end
 
