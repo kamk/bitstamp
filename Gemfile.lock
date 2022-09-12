@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bitstamp (0.3.0)
+    bitstamp (0.6.0)
       activemodel (~> 5.2)
 
 GEM
