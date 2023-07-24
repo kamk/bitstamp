@@ -7,7 +7,7 @@ module Bitstamp
       TYPES = { 0 => 'BUY', 1 => 'SELL' }.freeze
 
       attr_writer :net
-      attr_accessor :id, :timestamp, :type, :price, :amount, :amount_at_create, :currency_pair, :client_order_id
+      attr_accessor :id, :timestamp, :market, :type, :price, :amount, :amount_at_create, :currency_pair, :client_order_id
 
       def initialize(attributes = {})
         attributes['timestamp'] = DateTime.parse(attributes.delete('datetime')).to_time
