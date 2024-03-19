@@ -9,8 +9,8 @@ module Bitstamp
     end
 
     # Public transactions
-    def all(recent = 'hour')
-      @net.get('transactions', time: recent) \
+    def all(recent = 'minute')
+      @net.get('transactions', append_pair: true, time: recent) \
           .map { |t| Bitstamp::Model::Transaction.new(:public, @curr_pair, t) }
     end
 

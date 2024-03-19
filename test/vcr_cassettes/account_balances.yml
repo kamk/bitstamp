@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://www.bitstamp.net/api/v2/open_orders/
+    uri: https://www.bitstamp.net/api/v2/account_balances/btc/
     body:
       encoding: UTF-8
       string: ''
@@ -16,22 +16,22 @@ http_interactions:
       Host:
       - www.bitstamp.net
       X-Auth:
-      - BITSTAMP hpDlsj3dfcsZ2tEzhC1V95GCVJzZP0iJ
+      - BITSTAMP SOPfNtFNYOihvPwmq3Eu7DxLdYcXh0RO
       X-Auth-Nonce:
-      - 7b2d5a2e-24be-4da0-b32a-852610f6ea31
+      - c781c0f3-0e37-4d4e-b61d-0ecdf0ec6293
       X-Auth-Timestamp:
-      - '1710775385249'
+      - '1710525634048'
       X-Auth-Version:
       - v2
       X-Auth-Signature:
-      - B101C16619C0BE3A66C71B849A942B1E87438B3550B2D0A53ED4A55645B12798
+      - 1C9EB6CC018A34196631E425CC12236AF13CB4287C3C03E39C8172CC3408CABC
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 18 Mar 2024 15:23:05 GMT
+      - Fri, 15 Mar 2024 18:00:34 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -43,9 +43,9 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=63072000; includeSubDomains
       X-Server-Auth-Signature:
-      - a9538c4f81e88d2d8edc11dc6c66ccd1cc761916b67b8e613ec0ba59542b4609
+      - f42524628155424c19affdfa8c75c25b8a8e0a3309bb268a2e9fac599aab0a24
       Expires:
-      - Mon, 18 Mar 2024 15:23:05 GMT
+      - Fri, 15 Mar 2024 18:00:34 GMT
       Cache-Control:
       - max-age=0, no-cache, no-store, must-revalidate, private
       Vary:
@@ -63,16 +63,16 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Bts-Request-Trace-Id:
-      - Root=1-65f85c59-501b9d857b36b1202f63f121
+      - Root=1-65f48cc2-072fd0bd73cae5766842e579
       Set-Cookie:
-      - incap_ses_8219_99025=2mHVRHNVfDqYoE+CdMIPcllc+GUAAAAACK2Znc/2fbl+7oct7uzAGw==;
+      - incap_ses_8219_99025=vNEhNaTI6CRdNH97dMIPcsKM9GUAAAAAykj+jVcYXGoi2EW3N13Z+g==;
         path=/; Domain=.bitstamp.net
-      - nlbi_99025=FQxxWyv6hQyfcXZS5Q12eAAAAADj1p3hbA1pe4KQ59dnFMPM; path=/; Domain=.bitstamp.net
-      - stmpdid=lpqrbtEjrFqFSnSV6Akr8rj5I60rbu0FMHkRJi0Gpr_fLwsa0KFARJ5jh7JHA1jXYV09X7SxvwQnp0r3WfQJTdQ;
-        expires=Mon, 17 Mar 2031 15:23:05 GMT; HttpOnly; Max-Age=220752000; Path=/;
+      - nlbi_99025=R/DHEeYC5TLVfu4U5Q12eAAAAAB0mGPHiLUfPQHt2aoGNWsY; path=/; Domain=.bitstamp.net
+      - stmpdid=uI9NMa5XgVFMIbVNDa6uS2Iv-NJ8hTvbE-tiColu2kdA2Qjly-Ze4eKRnKK2uMjWA_pwu0wB_C-Fr59QI5OJF54;
+        expires=Fri, 14 Mar 2031 18:00:34 GMT; HttpOnly; Max-Age=220752000; Path=/;
         SameSite=Lax; Secure
-      - visid_incap_99025=OYrb2rd8T7WyQSrMErqvHVlc+GUAAAAAQUIPAAAAAAAVu6Rxwgaxk/00xLr1IXSu;
-        expires=Mon, 17 Mar 2025 23:01:17 GMT; HttpOnly; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=oF2FTVzgRZGQy/d+NYdMasKM9GUAAAAAQUIPAAAAAABtFuq7XQxs59FCbGPPQXwq;
+        expires=Fri, 14 Mar 2025 23:01:12 GMT; HttpOnly; path=/; Domain=.bitstamp.net
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -82,23 +82,18 @@ http_interactions:
       X-Cdn:
       - Imperva
       X-Iinfo:
-      - 4-43889750-43889753 NNNN CT(12 5 0) RT(1710775385282 17) q(0 1 1 0) r(1 1)
-        U6
+      - 12-167948567-167940878 PNNy RT(1710525634076 16) q(0 0 0 -1) r(1 1) U6
     body:
       encoding: ASCII-8BIT
-      string: '[{"id": "1728262007779328", "datetime": "2024-03-18 14:59:01", "type":
-        "1", "price": "80000", "amount": "0.00050000", "amount_at_create": "0.00050000",
-        "currency_pair": "BTC/USD", "market": "BTC/USD"}, {"id": "1728261652815877",
-        "datetime": "2024-03-18 14:57:34", "type": "0", "price": "50000", "amount":
-        "0.00050000", "amount_at_create": "0.00050000", "currency_pair": "BTC/USD",
-        "market": "BTC/USD"}]'
-  recorded_at: Mon, 18 Mar 2024 15:23:05 GMT
+      string: '{"currency": "btc", "total": "0.00178734", "available": "0.00128734",
+        "reserved": "0.00050000"}'
+  recorded_at: Fri, 15 Mar 2024 18:00:34 GMT
 - request:
     method: post
-    uri: https://www.bitstamp.net/api/v2/order_status/
+    uri: https://www.bitstamp.net/api/v2/account_balances/usd/
     body:
-      encoding: US-ASCII
-      string: id=1728262007779328
+      encoding: UTF-8
+      string: ''
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -108,25 +103,23 @@ http_interactions:
       - Ruby
       Host:
       - www.bitstamp.net
-      Content-Type:
-      - application/x-www-form-urlencoded
       X-Auth:
-      - BITSTAMP hpDlsj3dfcsZ2tEzhC1V95GCVJzZP0iJ
+      - BITSTAMP SOPfNtFNYOihvPwmq3Eu7DxLdYcXh0RO
       X-Auth-Nonce:
-      - '09e82744-2e0b-4a79-a608-778b5b5170b2'
+      - 63f1a650-6c0d-4af7-a428-5af11431e5cd
       X-Auth-Timestamp:
-      - '1710775385355'
+      - '1710525634137'
       X-Auth-Version:
       - v2
       X-Auth-Signature:
-      - A86FE893317D09A5AD62CA9C5809E4E582A666F8235852E8686E5AD08246B573
+      - 96D20C6C254C63DA96F87E5F1F3A6FB8F56D352B363290DF31979271281F8A00
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 18 Mar 2024 15:23:05 GMT
+      - Fri, 15 Mar 2024 18:00:34 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -138,9 +131,9 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=63072000; includeSubDomains
       X-Server-Auth-Signature:
-      - 0a01c589159e6b4a8ff2a2d51ebe78f614925456da047e8620c21c5fad1a5acb
+      - 01aaf88a445f82709e131839216d27b2a7833d08a14d28d734b9f9e046d40336
       Expires:
-      - Mon, 18 Mar 2024 15:23:05 GMT
+      - Fri, 15 Mar 2024 18:00:34 GMT
       Cache-Control:
       - max-age=0, no-cache, no-store, must-revalidate, private
       Vary:
@@ -158,16 +151,16 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Bts-Request-Trace-Id:
-      - Root=1-65f85c59-3ea22ae17e6ae6296aefedcd
+      - Root=1-65f48cc2-40c54b261fb21e4301168a45
       Set-Cookie:
-      - incap_ses_8219_99025=YIt8QIJk8ESYoE+CdMIPcllc+GUAAAAAN5Y5SLKFlh1hJMZZTqaT/g==;
+      - incap_ses_8219_99025=tsDIFSmHciGRNH97dMIPcsKM9GUAAAAAZO6l3RRaxmML8SQQU5in9A==;
         path=/; Domain=.bitstamp.net
-      - nlbi_99025=kdhPaIbpaQ7jX7KR5Q12eAAAAAA4VTDqVt/9z0kBRNHTYqvx; path=/; Domain=.bitstamp.net
-      - stmpdid=hsuwA1whxizMtfYJ7OTnNpGakX__8yy7xhjRTKZsfQlkg7xBPcCMPwXT0duRkmNAsrQPfdEllJadVwcMvWywTXM;
-        expires=Mon, 17 Mar 2031 15:23:05 GMT; HttpOnly; Max-Age=220752000; Path=/;
+      - nlbi_99025=0BELPSsBGjKka8EY5Q12eAAAAACOxL7YEo0dtJdRvWPMaasB; path=/; Domain=.bitstamp.net
+      - stmpdid=KTe6swWs0HiYSaVQd5ydhsLatwArKLdcQyXvR9pSsTBRcbCEqpI8sZviiTZRxgSuDgVQR9ybtYLiCeNJrG8SkKA;
+        expires=Fri, 14 Mar 2031 18:00:34 GMT; HttpOnly; Max-Age=220752000; Path=/;
         SameSite=Lax; Secure
-      - visid_incap_99025=OYrb2rd8T7WyQSrMErqvHVlc+GUAAAAAQUIPAAAAAAAVu6Rxwgaxk/00xLr1IXSu;
-        expires=Mon, 17 Mar 2025 23:01:17 GMT; HttpOnly; path=/; Domain=.bitstamp.net
+      - visid_incap_99025=iwjJG1SpSeOKy6lOmVPBPcKM9GUAAAAAQUIPAAAAAAAgol7tqtTohh/+BuAEas0w;
+        expires=Fri, 14 Mar 2025 23:01:11 GMT; HttpOnly; path=/; Domain=.bitstamp.net
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -177,11 +170,10 @@ http_interactions:
       X-Cdn:
       - Imperva
       X-Iinfo:
-      - 3-27376253-27375980 PNNN RT(1710775385365 20) q(0 0 0 0) r(0 0) U6
+      - 14-191225115-191211690 PNNy RT(1710525634141 22) q(0 0 0 -1) r(0 0) U6
     body:
       encoding: ASCII-8BIT
-      string: '{"id": 1728262007779328, "datetime": "2024-03-18 14:59:01", "type":
-        "1", "status": "Open", "market": "BTC/USD", "transactions": [], "amount_remaining":
-        "0.00050000"}'
-  recorded_at: Mon, 18 Mar 2024 15:23:05 GMT
+      string: '{"currency": "usd", "total": "67.90", "available": "42.82", "reserved":
+        "25.08"}'
+  recorded_at: Fri, 15 Mar 2024 18:00:34 GMT
 recorded_with: VCR 6.2.0

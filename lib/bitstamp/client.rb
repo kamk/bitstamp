@@ -11,13 +11,13 @@ module Bitstamp
 
     # Get ticker data
     def ticker
-      data = @net.get('ticker')
+      data = @net.get('ticker', append_pair: true)
       Bitstamp::Model::Ticker.new(data)
     end
 
     # Get an order book
     def order_book
-      data = @net.get('order_book')
+      data = @net.get('order_book', append_pair: true)
       data['timestamp'] = Time.at(data['timestamp'].to_i)
       %w[asks bids].each do |dir|
         data[dir].map! { |e| Bitstamp::Model::Offer.new(e) }
@@ -33,23 +33,22 @@ module Bitstamp
     # Get balances
     def balances
       r = {}
-      data = @net.post('balance')
       @curr_pair.each do |curr|
+        data = @net.post('account_balances', append: [curr])
         r[curr.upcase] = Bitstamp::Model::Balance.new(
-          currency: curr.upcase,
-          balance: data["#{curr}_balance"],
-          available: data["#{curr}_available"],
-          reserved: data["#{curr}_reserved"]
+          balance: data['total'],
+          available: data['available'],
+          reserved: data['reserved']
         )
-        r['FEE'] = (data['fee'] / 1000).to_d
       end
       r
     end
 
     # Find out coin's withdrawal fee
     def coin_withdrawal_fee
-      data = @net.post('balance', skip_currency_pair: true)
-      data["#{@curr_pair[0]}_withdrawal_fee"].to_d
+      coin = @curr_pair[0]
+      data = @net.post('fees/withdrawal', append: [coin])
+      data['fee'].to_d
     end
 
     # Access to orders

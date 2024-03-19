@@ -6,17 +6,10 @@ module Bitstamp
   # Network communication with Bitstamp API
   class NetComm
     PRIVATE_RESOURCES = %w[
-      balance user_transactions
+      account_balances user_transactions
       open_orders order_status cancel_order cancel_all_orders
       buy sell
-      withdrawal_requests btc_withdrawal btc_address
-      transfer-to-main transfer-from-main
-    ].freeze
-    SKIP_CURR_RESOURCES = %w[
-      user_transactions
-      order_status cancel_order
-      withdrawal_requests btc_withdrawal
-      btc_address
+      btc_address btc_withdrawal fees/withdrawal
       transfer-to-main transfer-from-main
     ].freeze
 
@@ -61,8 +54,9 @@ module Bitstamp
     def perform(req_klass, resource, params)
       result = {}
       uri_parts = [Bitstamp::SERVICE_URI, 'v2', resource]
-      uri_parts << @curr_pair unless SKIP_CURR_RESOURCES.include?(resource) ||
-                                     params.delete(:skip_currency_pair)
+      append = params.delete(:append)
+      uri_parts += append if append
+      uri_parts << @curr_pair if params.delete(:append_pair)
       uri_parts << '' # append '/' at the end
       uri = URI(uri_parts.join('/'))
 

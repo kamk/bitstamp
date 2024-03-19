@@ -6,9 +6,11 @@ module Bitstamp
     class Ticker < Base
       include ActiveModel::Model
 
-      attr_accessor :open, :last, :high, :low, :vwap, :volume, :bid, :ask, :timestamp
+      ATTRS = %w[open last high low vwap volume bid ask timestamp].freeze
+      attr_accessor(*ATTRS)
 
       def initialize(attributes = {})
+        attributes = attributes.slice(*ATTRS)
         super
         attributes.each do |a, v|
           next if a == 'timestamp'

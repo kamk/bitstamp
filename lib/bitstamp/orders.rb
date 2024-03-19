@@ -27,22 +27,22 @@ module Bitstamp
     end
 
     def buy_limit(amount, price)
-      order = @net.post('buy', amount: amount, price: price)
+      order = @net.post('buy', append_pair: true, amount: amount, price: price)
       Bitstamp::Model::Order.new(order)
     end
 
     def sell_limit(amount, price)
-      order = @net.post('sell', amount: amount, price: price)
+      order = @net.post('sell', append_pair: true, amount: amount, price: price)
       Bitstamp::Model::Order.new(order)
     end
 
     def buy_market(amount)
-      order = @net.post('buy/market', amount: amount)
+      order = @net.post('buy/market', append_pair: true, amount: amount)
       Bitstamp::Model::Order.new(order)
     end
 
     def sell_market(amount)
-      order = @net.post('sell/market', amount: amount)
+      order = @net.post('sell/market', append_pair: true, amount: amount)
       Bitstamp::Model::Order.new(order)
     end
   end
