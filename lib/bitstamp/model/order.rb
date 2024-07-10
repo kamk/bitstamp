@@ -28,6 +28,10 @@ module Bitstamp
       def cancel!
         @net.post('cancel_order', id: id)
         true
+      rescue Bitstamp::Error => e
+        raise if e.message != 'Order not found'
+
+        false
       end
     end
   end
