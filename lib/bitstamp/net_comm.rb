@@ -8,7 +8,7 @@ module Bitstamp
     PRIVATE_RESOURCES = %w[
       account_balances user_transactions
       open_orders order_status cancel_order cancel_all_orders
-      buy sell
+      buy sell buy/market sell/market
       btc_address btc_withdrawal fees/withdrawal
       transfer-to-main transfer-from-main
     ].freeze
