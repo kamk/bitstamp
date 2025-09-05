@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
+require "logger"
 require 'minitest/autorun'
 require 'webmock/minitest'
 
@@ -21,12 +22,12 @@ VCR.configure do |config|
 end
 
 # API keys
-CLIENT_ID = 0
-KEY = '<MAIN KEY>'
-SECRET = '<MAIN SECRET>'
-SUB_ID = 0
-SUB_KEY = '<SUB KEY>'
-SUB_SECRET = '<SUB SECRET>'
+CLIENT_ID = 287410
+KEY = 'SOPfNtFNYOihvPwmq3Eu7DxLdYcXh0RO'
+SECRET = 'pXCG8aeWegLjREKA5kxlOpfsw0KsgNVz'
+SUB_ID = 48489189
+SUB_KEY = 'OJmo2hGSwhykUxpuU8946JOaWzOSAEIm'
+SUB_SECRET = '8SsHzcgeMuwhXFCtgbKk215GNUISpHMy'
 
 # BigDecimal numbers
 def to_bigd(num)

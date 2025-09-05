@@ -58,7 +58,10 @@ module Bitstamp
 
     # Witdraw BTC coin
     def withdraw_btc(amount, address)
-      r = @net.post('btc_withdrawal', amount: amount, address: address)
+      r = @net.post('btc_withdrawal',
+                    amount: amount,
+                    address: address,
+                    contact_thirdparty: false)
       r['id']
     end
 
