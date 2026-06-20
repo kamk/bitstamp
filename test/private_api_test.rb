@@ -85,31 +85,31 @@ class PrivateApiTest < Minitest::Test
     VCR.use_cassette('user_transactions') do
       data = @bs_sub.transactions.user(offset: 0, limit: 2)
 
-      buy_tx = data[0]
-      assert_equal 1710776707.4750001,  buy_tx.timestamp.to_f
-      assert_equal 328165032,           buy_tx.transaction_id
-      assert_equal 'SELL',              buy_tx.transaction_type
-      assert_equal to_bigd(67318),      buy_tx.price
-      assert_equal 'USD',               buy_tx.price_currency
-      assert_equal to_bigd(-0.0005),    buy_tx.amount
-      assert_equal 'BTC',               buy_tx.amount_currency
-      assert_equal to_bigd(0.13464),    buy_tx.fee
-      assert_equal 'USD',               buy_tx.fee_currency
-      assert_equal 1728273337618434,    buy_tx.order_id
-      assert_equal to_bigd(-33.66),     buy_tx.fiat_amount
-
-      sell_tx = data[1]
-      assert_equal 1710776647.964,      sell_tx.timestamp.to_f
-      assert_equal 328164894,           sell_tx.transaction_id
-      assert_equal 'BUY',               sell_tx.transaction_type
-      assert_equal to_bigd(67322),      sell_tx.price
+      sell_tx = data[0]
+      assert_equal 1710776707.4750001,  sell_tx.timestamp.to_f
+      assert_equal 328165032,           sell_tx.transaction_id
+      assert_equal 'SELL',              sell_tx.transaction_type
+      assert_equal to_bigd(67318),      sell_tx.price
       assert_equal 'USD',               sell_tx.price_currency
-      assert_equal to_bigd(0.0005),     sell_tx.amount
+      assert_equal to_bigd(-0.0005),    sell_tx.amount
       assert_equal 'BTC',               sell_tx.amount_currency
       assert_equal to_bigd(0.13464),    sell_tx.fee
       assert_equal 'USD',               sell_tx.fee_currency
-      assert_equal 1728273093865474,    sell_tx.order_id
+      assert_equal 1728273337618434,    sell_tx.order_id
       assert_equal to_bigd(33.66),      sell_tx.fiat_amount
+
+      buy_tx = data[1]
+      assert_equal 1710776647.964,      buy_tx.timestamp.to_f
+      assert_equal 328164894,           buy_tx.transaction_id
+      assert_equal 'BUY',               buy_tx.transaction_type
+      assert_equal to_bigd(67322),      buy_tx.price
+      assert_equal 'USD',               buy_tx.price_currency
+      assert_equal to_bigd(0.0005),     buy_tx.amount
+      assert_equal 'BTC',               buy_tx.amount_currency
+      assert_equal to_bigd(0.13464),    buy_tx.fee
+      assert_equal 'USD',               buy_tx.fee_currency
+      assert_equal 1728273093865474,    buy_tx.order_id
+      assert_equal to_bigd(-33.66),     buy_tx.fiat_amount
     end
   end
 

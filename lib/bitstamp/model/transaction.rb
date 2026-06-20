@@ -55,7 +55,8 @@ module Bitstamp
       def fiat_amount
         raise(Bitstamp::Error, "Cannot get fiat_amount for #{transaction_type}") unless price
 
-        (price * amount).round(2)
+        # For SELL orders the fiat_amount is possitive. For BUY ones, it is negative
+        -(price * amount).round(2)
       end
 
       def to_hash
